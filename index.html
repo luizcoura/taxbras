@@ -47,175 +47,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --papel:#EDF0EA;
-  --papel-2:#E1E6DD;
-  --tinta:#1A2748;
-  --tinta-suave:#4A5575;
-  --carimbo:#C23A2E;
-  --verde:#2B7A57;
-  --ambar:#B7791F;
-  --linha:#BFC8BA;
-  --branco:#FAFBF8;
-  --titulo:"Bricolage Grotesque",system-ui,sans-serif;
-  --corpo:"Source Serif 4",Georgia,serif;
-  --nota:"IBM Plex Mono",ui-monospace,monospace;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --papel:#141A2B;--papel-2:#1C2339;--tinta:#E8ECF5;--tinta-suave:#A3AEC8;
-    --carimbo:#F0665A;--verde:#58C492;--ambar:#E5A94A;--linha:#313A57;--branco:#1F2740;
-  }
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--corpo);font-size:1.125rem;line-height:1.7}
-a{color:var(--carimbo)}
-:focus-visible{outline:3px solid var(--carimbo);outline-offset:3px}
-.wrap{max-width:68rem;margin:0 auto;padding:0 1rem}
-.texto{max-width:40rem}
-h1,h2,h3{font-family:var(--titulo);line-height:1.08;margin:0;letter-spacing:-.02em}
-h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800}
-h2{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;margin-bottom:1rem}
-h3{font-size:1.35rem;font-weight:700;margin-bottom:.4rem}
-p{margin:0 0 1rem}
-section{padding:4.5rem 0 1rem}
-.lead{font-size:1.3rem;color:var(--tinta-suave)}
-
-/* topo */
-header.topo{padding:3rem 0 2rem}
-header.topo p.lead{max-width:36rem;margin-top:1.2rem}
-.nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem;font-family:var(--titulo);font-weight:500;font-size:.95rem}
-.nav a{color:var(--tinta);text-decoration:none;border:1.5px solid var(--tinta);padding:.3rem .8rem;border-radius:99px}
-.nav a:hover{background:var(--tinta);color:var(--papel)}
-
-/* nota fiscal interativa */
-.nota{background:var(--branco);border:1.5px solid var(--tinta);padding:1.4rem 1.2rem 1.6rem;font-family:var(--nota);font-size:.9rem;line-height:1.5;position:relative;
-  clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),97.5% 100%,95% calc(100% - 10px),92.5% 100%,90% calc(100% - 10px),87.5% 100%,85% calc(100% - 10px),82.5% 100%,80% calc(100% - 10px),77.5% 100%,75% calc(100% - 10px),72.5% 100%,70% calc(100% - 10px),67.5% 100%,65% calc(100% - 10px),62.5% 100%,60% calc(100% - 10px),57.5% 100%,55% calc(100% - 10px),52.5% 100%,50% calc(100% - 10px),47.5% 100%,45% calc(100% - 10px),42.5% 100%,40% calc(100% - 10px),37.5% 100%,35% calc(100% - 10px),32.5% 100%,30% calc(100% - 10px),27.5% 100%,25% calc(100% - 10px),22.5% 100%,20% calc(100% - 10px),17.5% 100%,15% calc(100% - 10px),12.5% 100%,10% calc(100% - 10px),7.5% 100%,5% calc(100% - 10px),2.5% 100%,0 calc(100% - 10px))}
-.nota h2{font-family:var(--nota);font-size:1rem;font-weight:500;letter-spacing:0;margin:0 0 .2rem}
-.nota .ano{font-family:var(--titulo);font-weight:800;font-size:3.6rem;line-height:1;letter-spacing:-.03em;margin:.2rem 0 .6rem}
-.linhas{list-style:none;margin:1rem 0;padding:0;border-top:1.5px dashed var(--tinta-suave)}
-.linhas li{display:grid;grid-template-columns:5.5rem 1fr 3.4rem;gap:.6rem;align-items:center;padding:.35rem 0;border-bottom:1px dashed var(--linha)}
-.barra{height:.7rem;background:var(--papel-2);position:relative;overflow:hidden}
-.barra i{position:absolute;inset:0 auto 0 0;width:0;transition:width .5s ease,background .3s}
-.novo i{background:var(--verde)}
-.velho i{background:var(--carimbo)}
-.linhas .pct{text-align:right;color:var(--tinta-suave)}
-.explica{min-height:7.5rem;font-family:var(--corpo);font-size:1.05rem;line-height:1.55;margin:.4rem 0 1rem}
-.slider{width:100%;accent-color:var(--carimbo);height:2rem}
-.marcas{display:flex;justify-content:space-between;color:var(--tinta-suave);font-size:.75rem}
-.legenda{display:flex;gap:1rem;flex-wrap:wrap;font-size:.8rem;margin-top:.8rem}
-.legenda b{display:inline-block;width:.8rem;height:.8rem;margin-right:.35rem;vertical-align:-1px}
-
-.hero-grid{display:grid;gap:2.5rem;align-items:start}
-@media(min-width:56rem){.hero-grid{grid-template-columns:1fr 26rem}}
-
-/* resumo */
-.tres{display:grid;gap:1rem;margin-top:1.5rem}
-@media(min-width:48rem){.tres{grid-template-columns:repeat(3,1fr)}}
-.tres div{border-top:4px solid var(--tinta);padding-top:.8rem}
-.tres p{font-size:1rem;line-height:1.55;color:var(--tinta-suave);margin:0}
-.tres h3{font-size:1.2rem}
-
-/* hoje x depois */
-.comparar{display:grid;gap:1.5rem;margin:1.5rem 0}
-@media(min-width:48rem){.comparar{grid-template-columns:1fr 1fr}}
-.col{background:var(--branco);border:1.5px solid var(--linha);padding:1.3rem}
-.col.hoje{border-top:6px solid var(--carimbo)}
-.col.depois{border-top:6px solid var(--verde)}
-.col ul{margin:0;padding-left:1.2rem}
-.col li{margin-bottom:.5rem}
-.sigla{font-family:var(--nota);font-size:.9em;background:var(--papel-2);padding:.05em .35em}
-
-/* exemplo cascata */
-.exemplo{background:var(--tinta);color:var(--papel);padding:1.5rem;margin:1.5rem 0}
-.exemplo h3{color:var(--papel)}
-.exemplo p{color:inherit;opacity:.92}
-.exemplo strong{color:#fff}
-
-/* linha do tempo */
-.tempo{list-style:none;padding:0;margin:1.5rem 0;border-left:3px solid var(--tinta);margin-left:.5rem}
-.tempo li{position:relative;padding:0 0 1.6rem 1.6rem}
-.tempo li::before{content:"";position:absolute;left:-.62rem;top:.45rem;width:1rem;height:1rem;background:var(--papel);border:3px solid var(--tinta);border-radius:50%}
-.tempo li.agora::before{background:var(--carimbo);border-color:var(--carimbo)}
-.tempo h3{font-size:1.2rem}
-.tempo p{font-size:1rem;margin:0;color:var(--tinta-suave)}
-.etiqueta{display:inline-block;font-family:var(--titulo);font-weight:700;font-size:.8rem;background:var(--carimbo);color:#fff;padding:.1rem .55rem;margin-left:.4rem;vertical-align:2px;transform:rotate(-2deg)}
-
-/* MEI */
-table{width:100%;border-collapse:collapse;background:var(--branco);font-size:1rem;line-height:1.45;margin:1.2rem 0}
-th,td{padding:.75rem .8rem;border:1px solid var(--linha);text-align:left;vertical-align:top}
-th{font-family:var(--titulo);font-weight:700;background:var(--papel-2)}
-.tabela-rolagem{overflow-x:auto}
-.tabela-rolagem table{min-width:36rem}
-@media (max-width:40rem){
-  .tabela-rolagem table{min-width:0}
-  .tabela-rolagem thead{position:absolute;left:-9999px}
-  .tabela-rolagem table,.tabela-rolagem tbody,.tabela-rolagem tr,.tabela-rolagem th,.tabela-rolagem td{display:block;width:100%}
-  .tabela-rolagem tr{margin-bottom:1rem;border:1px solid var(--linha)}
-  .tabela-rolagem tbody th{border:none;border-bottom:1px solid var(--linha)}
-  .tabela-rolagem td{border:none;border-bottom:1px solid var(--linha)}
-  .tabela-rolagem td:last-child{border-bottom:none}
-  .tabela-rolagem td::before{display:block;font-family:var(--titulo);font-weight:700;font-size:.85rem;color:var(--tinta-suave);margin-bottom:.15rem}
-  .tabela-rolagem td:nth-of-type(1)::before{content:"Hoje"}
-  .tabela-rolagem td:nth-of-type(2)::before{content:"Com a reforma"}
-}
-.caso{border:1.5px solid var(--tinta);background:var(--branco);padding:1.3rem;margin:1.5rem 0}
-.caso h3{margin-bottom:.8rem}
-.caso .cena{display:grid;gap:1rem}
-@media(min-width:48rem){.caso .cena{grid-template-columns:1fr 1fr}}
-.caso .cena div{padding:.2rem 0}
-.caso small{font-family:var(--titulo);font-weight:700;color:var(--tinta-suave);display:block;margin-bottom:.2rem}
-
-/* Pix */
-.veredito{display:grid;gap:1rem;margin:1.5rem 0}
-@media(min-width:48rem){.veredito{grid-template-columns:1fr 1fr}}
-.carimbo{display:inline-block;font-family:var(--titulo);font-weight:800;font-size:1.7rem;color:var(--verde);border:4px solid var(--verde);padding:.1rem .8rem;transform:rotate(-3deg);margin:.3rem 0 1rem}
-.carimbo.aviso{color:var(--ambar);border-color:var(--ambar)}
-.mito{background:var(--branco);padding:1.2rem;border-left:6px solid var(--linha)}
-.mito.fato{border-left-color:var(--verde)}
-.mito.cuidado{border-left-color:var(--ambar)}
-.mito h3{font-size:1.15rem}
-.mito p{margin:0;font-size:1rem}
-
-details{background:var(--branco);border:1.5px solid var(--linha);margin-bottom:.6rem}
-summary{cursor:pointer;padding:.8rem 1rem;font-family:var(--titulo);font-weight:700;list-style:none}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";float:right;font-size:1.3rem;line-height:1}
-details[open] summary::after{content:"–"}
-details p{padding:0 1rem;font-size:1rem;margin:0 0 .9rem}
-
-.aviso-final{border:2px dashed var(--ambar);padding:1.1rem;margin:2.5rem 0 1rem;font-size:1rem}
-footer{padding:2rem 0 4rem;font-size:.95rem;color:var(--tinta-suave)}
-footer ul{padding-left:1.2rem}
-/* simuladores */
-.global{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;align-items:center;background:var(--branco);border:1.5px solid var(--linha);padding:1rem;margin:1.2rem 0;font-size:1rem;line-height:1.4}
-.global small{flex-basis:100%;color:var(--tinta-suave)}
-.abas{display:flex;flex-wrap:wrap;gap:.4rem;border-bottom:3px solid var(--tinta);margin-top:1.5rem}
-.abas button{font:inherit;font-family:var(--titulo);font-weight:700;font-size:1rem;background:var(--papel-2);color:var(--tinta);border:1.5px solid var(--linha);border-bottom:none;padding:.6rem 1.1rem;cursor:pointer}
-.abas button[aria-selected="true"]{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
-.painel{padding:1.4rem 0 .5rem}
-.painel[hidden]{display:none}
-.sim{display:grid;gap:1.5rem}
-@media(min-width:52rem){.sim{grid-template-columns:1fr 1fr;align-items:start}}
-.campos{display:grid;gap:.9rem}
-.campo label{display:block;font-family:var(--titulo);font-weight:700;font-size:.95rem;margin-bottom:.2rem;line-height:1.3}
-.campo small{display:block;color:var(--tinta-suave);font-size:.85rem;line-height:1.4;margin-top:.2rem}
-input[type=number],select{font:inherit;font-size:1rem;width:100%;padding:.5rem .6rem;background:var(--branco);color:var(--tinta);border:1.5px solid var(--tinta);border-radius:0}
-.global input[type=number]{width:6rem}
-.resultado{background:var(--branco);border:1.5px solid var(--tinta);padding:1.2rem;font-family:var(--nota);font-size:.9rem;line-height:1.5}
-.resultado .linha{display:flex;justify-content:space-between;gap:1rem;padding:.35rem 0;border-bottom:1px dashed var(--linha)}
-.resultado .linha span:last-child{text-align:right;white-space:nowrap}
-.resultado .total{font-family:var(--titulo);font-weight:800;font-size:1.25rem;border-bottom:none;border-top:2px solid var(--tinta);margin-top:.4rem;padding-top:.6rem}
-.resultado .bom{color:var(--verde)}
-.resultado .ruim{color:var(--carimbo)}
-.resultado .msg{font-family:var(--corpo);font-size:1rem;line-height:1.5;margin:.9rem 0 0}
-.fatia{display:flex;height:1.1rem;margin:.6rem 0 .3rem;background:var(--papel-2)}
-.fatia i{display:block;height:100%;transition:width .4s}
-@media (prefers-reduced-motion:reduce){.fatia i{transition:none}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i{transition:none}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -236,6 +68,7 @@ input[type=number],select{font:inherit;font-size:1rem;width:100%;padding:.5rem .
         <a href="#simuladores">Simuladores</a>
         <a href="#renda">Imposto de Renda</a>
         <a href="#glossario">Glossário</a>
+        <a href="perguntas.html">Perguntas</a>
       </nav>
     </div>
 
@@ -626,6 +459,7 @@ input[type=number],select{font:inherit;font-size:1rem;width:100%;padding:.5rem .
 <footer>
   <div class="wrap">
     <p>RESET tributário · © 2026 Luiz Coura · <a href="https://github.com/luizcoura/reset-tributario/blob/main/LICENSE">Licença MIT</a> · <a href="https://github.com/luizcoura/reset-tributario">Código no GitHub</a></p>
+    <p><a href="perguntas.html">Perguntas frequentes sobre a reforma</a></p>
     <p>Conteúdo conferido em 30 de outubro de 2026 com a LC 214/2025 e fontes jurídicas. Leis e regulamentos podem mudar.</p>
     <p>Fontes consultadas:</p>
     <ul>
