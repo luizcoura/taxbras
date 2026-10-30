@@ -9,3 +9,7 @@ Site: https://luizcoura.github.io/reset-tributario/
 Para ver localmente, abra `index.html` no navegador. Não há dependências nem etapa de build.
 
 Os números dos simuladores são estimativas didáticas, não cálculo oficial. Confirme com um contador.
+
+## Licença
+
+[MIT](LICENSE). Você pode usar, copiar e adaptar, mantendo o aviso de autoria.
