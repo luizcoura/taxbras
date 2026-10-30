@@ -146,6 +146,18 @@ th,td{padding:.75rem .8rem;border:1px solid var(--linha);text-align:left;vertica
 th{font-family:var(--titulo);font-weight:700;background:var(--papel-2)}
 .tabela-rolagem{overflow-x:auto}
 .tabela-rolagem table{min-width:36rem}
+@media (max-width:40rem){
+  .tabela-rolagem table{min-width:0}
+  .tabela-rolagem thead{position:absolute;left:-9999px}
+  .tabela-rolagem table,.tabela-rolagem tbody,.tabela-rolagem tr,.tabela-rolagem th,.tabela-rolagem td{display:block;width:100%}
+  .tabela-rolagem tr{margin-bottom:1rem;border:1px solid var(--linha)}
+  .tabela-rolagem tbody th{border:none;border-bottom:1px solid var(--linha)}
+  .tabela-rolagem td{border:none;border-bottom:1px solid var(--linha)}
+  .tabela-rolagem td:last-child{border-bottom:none}
+  .tabela-rolagem td::before{display:block;font-family:var(--titulo);font-weight:700;font-size:.85rem;color:var(--tinta-suave);margin-bottom:.15rem}
+  .tabela-rolagem td:nth-of-type(1)::before{content:"Hoje"}
+  .tabela-rolagem td:nth-of-type(2)::before{content:"Com a reforma"}
+}
 .caso{border:1.5px solid var(--tinta);background:var(--branco);padding:1.3rem;margin:1.5rem 0}
 .caso h3{margin-bottom:.8rem}
 .caso .cena{display:grid;gap:1rem}
@@ -530,8 +542,8 @@ input[type=number],select{font:inherit;font-size:1rem;width:100%;padding:.5rem .
         <div class="campos">
           <div class="campo"><label for="k-mens">Mensalidades dos sócios por mês (R$)</label><input type="number" id="k-mens" value="30000" min="0" step="500"></div>
           <div class="campo"><label for="k-trat">Como a mensalidade é tratada</label>
-            <select id="k-trat"><option value="fora">Contribuição de estatuto, só para manter o clube (fora da CBS e IBS)</option><option value="tributa">O sócio recebe um serviço em troca (tributada)</option></select>
-            <small>É o ponto em aberto da reforma. Compare os dois resultados.</small></div>
+            <select id="k-trat"><option value="fora">Só manutenção do clube (fora)</option><option value="tributa">Serviço em troca (tributada)</option></select>
+            <small>Fora: contribuição prevista no estatuto, sem contrapartida direta, só para manter o clube. Tributada: o sócio recebe um serviço em troca. É o ponto em aberto da reforma, então compare os dois.</small></div>
           <div class="campo"><label for="k-bar">Bar e restaurante por mês (R$)</label><input type="number" id="k-bar" value="20000" min="0" step="500"></div>
           <div class="campo"><label for="k-evt">Aluguel de salão e eventos por mês (R$)</label><input type="number" id="k-evt" value="10000" min="0" step="500"></div>
           <div class="campo"><label for="k-aula">Aulas e escolinhas por mês (R$)</label><input type="number" id="k-aula" value="8000" min="0" step="500"></div>
