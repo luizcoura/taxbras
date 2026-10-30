@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reforma tributária sem juridiquês</title>
+<meta name="description" content="O que muda com a reforma tributária brasileira: MEI, Pix, preços e o calendário até 2033, explicado para quem não é do ramo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#EDF0EA;
+  --papel-2:#E1E6DD;
+  --tinta:#1A2748;
+  --tinta-suave:#4A5575;
+  --carimbo:#C23A2E;
+  --verde:#2B7A57;
+  --ambar:#B7791F;
+  --linha:#BFC8BA;
+  --branco:#FAFBF8;
+  --titulo:"Bricolage Grotesque",system-ui,sans-serif;
+  --corpo:"Source Serif 4",Georgia,serif;
+  --nota:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --papel:#141A2B;--papel-2:#1C2339;--tinta:#E8ECF5;--tinta-suave:#A3AEC8;
+    --carimbo:#F0665A;--verde:#58C492;--ambar:#E5A94A;--linha:#313A57;--branco:#1F2740;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--corpo);font-size:1.125rem;line-height:1.7}
+a{color:var(--carimbo)}
+:focus-visible{outline:3px solid var(--carimbo);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1rem}
+.texto{max-width:40rem}
+h1,h2,h3{font-family:var(--titulo);line-height:1.08;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800}
+h2{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;margin-bottom:1rem}
+h3{font-size:1.35rem;font-weight:700;margin-bottom:.4rem}
+p{margin:0 0 1rem}
+section{padding:4.5rem 0 1rem}
+.lead{font-size:1.3rem;color:var(--tinta-suave)}
+
+/* topo */
+header.topo{padding:3rem 0 2rem}
+header.topo p.lead{max-width:36rem;margin-top:1.2rem}
+.nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem;font-family:var(--titulo);font-weight:500;font-size:.95rem}
+.nav a{color:var(--tinta);text-decoration:none;border:1.5px solid var(--tinta);padding:.3rem .8rem;border-radius:99px}
+.nav a:hover{background:var(--tinta);color:var(--papel)}
+
+/* nota fiscal interativa */
+.nota{background:var(--branco);border:1.5px solid var(--tinta);padding:1.4rem 1.2rem 1.6rem;font-family:var(--nota);font-size:.9rem;line-height:1.5;position:relative;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),97.5% 100%,95% calc(100% - 10px),92.5% 100%,90% calc(100% - 10px),87.5% 100%,85% calc(100% - 10px),82.5% 100%,80% calc(100% - 10px),77.5% 100%,75% calc(100% - 10px),72.5% 100%,70% calc(100% - 10px),67.5% 100%,65% calc(100% - 10px),62.5% 100%,60% calc(100% - 10px),57.5% 100%,55% calc(100% - 10px),52.5% 100%,50% calc(100% - 10px),47.5% 100%,45% calc(100% - 10px),42.5% 100%,40% calc(100% - 10px),37.5% 100%,35% calc(100% - 10px),32.5% 100%,30% calc(100% - 10px),27.5% 100%,25% calc(100% - 10px),22.5% 100%,20% calc(100% - 10px),17.5% 100%,15% calc(100% - 10px),12.5% 100%,10% calc(100% - 10px),7.5% 100%,5% calc(100% - 10px),2.5% 100%,0 calc(100% - 10px))}
+.nota h2{font-family:var(--nota);font-size:1rem;font-weight:500;letter-spacing:0;margin:0 0 .2rem}
+.nota .ano{font-family:var(--titulo);font-weight:800;font-size:3.6rem;line-height:1;letter-spacing:-.03em;margin:.2rem 0 .6rem}
+.linhas{list-style:none;margin:1rem 0;padding:0;border-top:1.5px dashed var(--tinta-suave)}
+.linhas li{display:grid;grid-template-columns:5.5rem 1fr 3.4rem;gap:.6rem;align-items:center;padding:.35rem 0;border-bottom:1px dashed var(--linha)}
+.barra{height:.7rem;background:var(--papel-2);position:relative;overflow:hidden}
+.barra i{position:absolute;inset:0 auto 0 0;width:0;transition:width .5s ease,background .3s}
+.novo i{background:var(--verde)}
+.velho i{background:var(--carimbo)}
+.linhas .pct{text-align:right;color:var(--tinta-suave)}
+.explica{min-height:7.5rem;font-family:var(--corpo);font-size:1.05rem;line-height:1.55;margin:.4rem 0 1rem}
+.slider{width:100%;accent-color:var(--carimbo);height:2rem}
+.marcas{display:flex;justify-content:space-between;color:var(--tinta-suave);font-size:.75rem}
+.legenda{display:flex;gap:1rem;flex-wrap:wrap;font-size:.8rem;margin-top:.8rem}
+.legenda b{display:inline-block;width:.8rem;height:.8rem;margin-right:.35rem;vertical-align:-1px}
+
+.hero-grid{display:grid;gap:2.5rem;align-items:start}
+@media(min-width:56rem){.hero-grid{grid-template-columns:1fr 26rem}}
+
+/* resumo */
+.tres{display:grid;gap:1rem;margin-top:1.5rem}
+@media(min-width:48rem){.tres{grid-template-columns:repeat(3,1fr)}}
+.tres div{border-top:4px solid var(--tinta);padding-top:.8rem}
+.tres p{font-size:1rem;line-height:1.55;color:var(--tinta-suave);margin:0}
+.tres h3{font-size:1.2rem}
+
+/* hoje x depois */
+.comparar{display:grid;gap:1.5rem;margin:1.5rem 0}
+@media(min-width:48rem){.comparar{grid-template-columns:1fr 1fr}}
+.col{background:var(--branco);border:1.5px solid var(--linha);padding:1.3rem}
+.col.hoje{border-top:6px solid var(--carimbo)}
+.col.depois{border-top:6px solid var(--verde)}
+.col ul{margin:0;padding-left:1.2rem}
+.col li{margin-bottom:.5rem}
+.sigla{font-family:var(--nota);font-size:.9em;background:var(--papel-2);padding:.05em .35em}
+
+/* exemplo cascata */
+.exemplo{background:var(--tinta);color:var(--papel);padding:1.5rem;margin:1.5rem 0}
+.exemplo h3{color:var(--papel)}
+.exemplo p{color:inherit;opacity:.92}
+.exemplo strong{color:#fff}
+
+/* linha do tempo */
+.tempo{list-style:none;padding:0;margin:1.5rem 0;border-left:3px solid var(--tinta);margin-left:.5rem}
+.tempo li{position:relative;padding:0 0 1.6rem 1.6rem}
+.tempo li::before{content:"";position:absolute;left:-.62rem;top:.45rem;width:1rem;height:1rem;background:var(--papel);border:3px solid var(--tinta);border-radius:50%}
+.tempo li.agora::before{background:var(--carimbo);border-color:var(--carimbo)}
+.tempo h3{font-size:1.2rem}
+.tempo p{font-size:1rem;margin:0;color:var(--tinta-suave)}
+.etiqueta{display:inline-block;font-family:var(--titulo);font-weight:700;font-size:.8rem;background:var(--carimbo);color:#fff;padding:.1rem .55rem;margin-left:.4rem;vertical-align:2px;transform:rotate(-2deg)}
+
+/* MEI */
+table{width:100%;border-collapse:collapse;background:var(--branco);font-size:1rem;line-height:1.45;margin:1.2rem 0}
+th,td{padding:.75rem .8rem;border:1px solid var(--linha);text-align:left;vertical-align:top}
+th{font-family:var(--titulo);font-weight:700;background:var(--papel-2)}
+.tabela-rolagem{overflow-x:auto}
+.tabela-rolagem table{min-width:36rem}
+.caso{border:1.5px solid var(--tinta);background:var(--branco);padding:1.3rem;margin:1.5rem 0}
+.caso h3{margin-bottom:.8rem}
+.caso .cena{display:grid;gap:1rem}
+@media(min-width:48rem){.caso .cena{grid-template-columns:1fr 1fr}}
+.caso .cena div{padding:.2rem 0}
+.caso small{font-family:var(--titulo);font-weight:700;color:var(--tinta-suave);display:block;margin-bottom:.2rem}
+
+/* Pix */
+.veredito{display:grid;gap:1rem;margin:1.5rem 0}
+@media(min-width:48rem){.veredito{grid-template-columns:1fr 1fr}}
+.carimbo{display:inline-block;font-family:var(--titulo);font-weight:800;font-size:1.7rem;color:var(--verde);border:4px solid var(--verde);padding:.1rem .8rem;transform:rotate(-3deg);margin:.3rem 0 1rem}
+.carimbo.aviso{color:var(--ambar);border-color:var(--ambar)}
+.mito{background:var(--branco);padding:1.2rem;border-left:6px solid var(--linha)}
+.mito.fato{border-left-color:var(--verde)}
+.mito.cuidado{border-left-color:var(--ambar)}
+.mito h3{font-size:1.15rem}
+.mito p{margin:0;font-size:1rem}
+
+details{background:var(--branco);border:1.5px solid var(--linha);margin-bottom:.6rem}
+summary{cursor:pointer;padding:.8rem 1rem;font-family:var(--titulo);font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 1rem;font-size:1rem;margin:0 0 .9rem}
+
+.aviso-final{border:2px dashed var(--ambar);padding:1.1rem;margin:2.5rem 0 1rem;font-size:1rem}
+footer{padding:2rem 0 4rem;font-size:.95rem;color:var(--tinta-suave)}
+footer ul{padding-left:1.2rem}
+/* simuladores */
+.global{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;align-items:center;background:var(--branco);border:1.5px solid var(--linha);padding:1rem;margin:1.2rem 0;font-size:1rem;line-height:1.4}
+.global small{flex-basis:100%;color:var(--tinta-suave)}
+.abas{display:flex;flex-wrap:wrap;gap:.4rem;border-bottom:3px solid var(--tinta);margin-top:1.5rem}
+.abas button{font:inherit;font-family:var(--titulo);font-weight:700;font-size:1rem;background:var(--papel-2);color:var(--tinta);border:1.5px solid var(--linha);border-bottom:none;padding:.6rem 1.1rem;cursor:pointer}
+.abas button[aria-selected="true"]{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+.painel{padding:1.4rem 0 .5rem}
+.painel[hidden]{display:none}
+.sim{display:grid;gap:1.5rem}
+@media(min-width:52rem){.sim{grid-template-columns:1fr 1fr;align-items:start}}
+.campos{display:grid;gap:.9rem}
+.campo label{display:block;font-family:var(--titulo);font-weight:700;font-size:.95rem;margin-bottom:.2rem;line-height:1.3}
+.campo small{display:block;color:var(--tinta-suave);font-size:.85rem;line-height:1.4;margin-top:.2rem}
+input[type=number],select{font:inherit;font-size:1rem;width:100%;padding:.5rem .6rem;background:var(--branco);color:var(--tinta);border:1.5px solid var(--tinta);border-radius:0}
+.global input[type=number]{width:6rem}
+.resultado{background:var(--branco);border:1.5px solid var(--tinta);padding:1.2rem;font-family:var(--nota);font-size:.9rem;line-height:1.5}
+.resultado .linha{display:flex;justify-content:space-between;gap:1rem;padding:.35rem 0;border-bottom:1px dashed var(--linha)}
+.resultado .linha span:last-child{text-align:right;white-space:nowrap}
+.resultado .total{font-family:var(--titulo);font-weight:800;font-size:1.25rem;border-bottom:none;border-top:2px solid var(--tinta);margin-top:.4rem;padding-top:.6rem}
+.resultado .bom{color:var(--verde)}
+.resultado .ruim{color:var(--carimbo)}
+.resultado .msg{font-family:var(--corpo);font-size:1rem;line-height:1.5;margin:.9rem 0 0}
+.fatia{display:flex;height:1.1rem;margin:.6rem 0 .3rem;background:var(--papel-2)}
+.fatia i{display:block;height:100%;transition:width .4s}
+@media (prefers-reduced-motion:reduce){.fatia i{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>A reforma tributária, sem juridiquês</h1>
+      <p class="lead">Os impostos sobre o que a gente compra vão mudar bastante até 2033. Aqui está o que acontece com o preço das coisas, com o MEI e com o Pix, do jeito que é hoje e do jeito que vai ficar.</p>
+      <nav class="nav" aria-label="Seções">
+        <a href="#resumo">Resumo</a>
+        <a href="#hoje">Como é hoje</a>
+        <a href="#depois">Como vai ficar</a>
+        <a href="#prazos">Calendário</a>
+        <a href="#mei">MEI</a>
+        <a href="#pix">Pix</a>
+        <a href="#clubes">Clubes</a>
+        <a href="#simuladores">Simuladores</a>
+        <a href="#renda">Imposto de Renda</a>
+        <a href="#glossario">Glossário</a>
+      </nav>
+    </div>
+
+    <aside class="nota" aria-labelledby="nota-titulo">
+      <h2 id="nota-titulo">NOTA DE EXEMPLO: R$ 100 em compras</h2>
+      <div>Arraste e veja quais impostos estão valendo:</div>
+      <div class="ano" id="ano" aria-live="polite">2026</div>
+      <ul class="linhas" id="linhas"></ul>
+      <p class="explica" id="explica"></p>
+      <label for="slider" class="sr" style="position:absolute;left:-9999px">Ano</label>
+      <input class="slider" type="range" id="slider" min="2026" max="2033" step="1" value="2026">
+      <div class="marcas" aria-hidden="true"><span>2026</span><span>2029</span><span>2033</span></div>
+      <div class="legenda">
+        <span><b style="background:var(--carimbo)"></b>imposto antigo</span>
+        <span><b style="background:var(--verde)"></b>imposto novo</span>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<main>
+<section id="resumo">
+  <div class="wrap">
+    <h2>Em poucas palavras</h2>
+    <div class="texto">
+      <p class="lead">Hoje, quando você compra algo, vários impostos diferentes estão escondidos no preço. A reforma troca cinco deles por dois, com regras iguais para o país todo.</p>
+    </div>
+    <div class="tres">
+      <div>
+        <h3>Cinco viram dois</h3>
+        <p>PIS, Cofins, IPI, ICMS e ISS saem. Entram a <strong>CBS</strong> (federal) e o <strong>IBS</strong> (de estados e cidades).</p>
+      </div>
+      <div>
+        <h3>Vale onde você compra</h3>
+        <p>O imposto passa a ir para o estado e a cidade de quem consome, e não de onde a empresa fica. Isso acaba com a briga entre estados por incentivos.</p>
+      </div>
+      <div>
+        <h3>Sem imposto em cima de imposto</h3>
+        <p>A empresa desconta o que já foi pago pelos fornecedores. Cada etapa paga só sobre o que acrescentou.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hoje">
+  <div class="wrap">
+    <h2>Como é hoje</h2>
+    <div class="texto">
+      <p>Hoje o Brasil tem um dos sistemas de impostos sobre consumo mais complicados do mundo. Cada coisa que você compra pode ter até cinco tributos diferentes, de três governos diferentes.</p>
+    </div>
+    <div class="comparar">
+      <div class="col hoje">
+        <h3>Os cinco impostos atuais</h3>
+        <ul>
+          <li><span class="sigla">PIS</span> e <span class="sigla">Cofins</span>: federais, cobrados sobre o faturamento das empresas.</li>
+          <li><span class="sigla">IPI</span>: federal, cobrado de quem fabrica produtos.</li>
+          <li><span class="sigla">ICMS</span>: estadual, o maior deles. Cada um dos 27 estados tem suas próprias regras e alíquotas.</li>
+          <li><span class="sigla">ISS</span>: municipal, cobrado sobre serviços. Cada uma das mais de 5.500 cidades define o seu.</li>
+        </ul>
+      </div>
+      <div class="col hoje">
+        <h3>Por que isso é um problema</h3>
+        <ul>
+          <li><strong>Imposto sobre imposto.</strong> Em muitos casos, um tributo é calculado em cima do preço que já inclui outro tributo.</li>
+          <li><strong>Burocracia.</strong> Empresas gastam muito tempo e dinheiro só para entender qual regra vale em cada caso.</li>
+          <li><strong>Guerra fiscal.</strong> Estados oferecem descontos para atrair fábricas, e isso distorce a concorrência.</li>
+          <li><strong>Pouca transparência.</strong> Você paga imposto em tudo, mas raramente sabe quanto.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exemplo">
+      <h3>Um exemplo para entender o "imposto em cima de imposto"</h3>
+      <p>Imagine uma camiseta que passa por três empresas: a fábrica de tecido, a confecção e a loja. Na regra antiga de várias etapas, parte do imposto pago pela fábrica de tecido <strong>entra no custo</strong> da confecção, que paga imposto sobre esse custo maior. A loja repete o processo. No final, o imposto que você paga na camiseta é maior do que a alíquota que aparece na lei.</p>
+      <p>Com a reforma, cada empresa desconta o imposto que já veio nas etapas anteriores. O governo recebe a mesma quantia no total, só que de forma mais clara e sem acúmulo escondido.</p>
+    </div>
+  </div>
+</section>
+
+<section id="depois">
+  <div class="wrap">
+    <h2>Como vai ficar</h2>
+    <div class="texto">
+      <p>A reforma começou com a Emenda Constitucional 132, de 2023, e foi detalhada pela Lei Complementar 214, de 2025, que depois recebeu ajustes em 2026. O desenho se chama <em>IVA dual</em>: um imposto federal e um imposto de estados e cidades, com as mesmas regras.</p>
+    </div>
+
+    <div class="comparar">
+      <div class="col depois">
+        <h3>Os novos tributos</h3>
+        <ul>
+          <li><span class="sigla">CBS</span>: Contribuição sobre Bens e Serviços. Federal. Substitui PIS e Cofins.</li>
+          <li><span class="sigla">IBS</span>: Imposto sobre Bens e Serviços. Dividido entre estados e municípios. Substitui ICMS e ISS.</li>
+          <li><span class="sigla">IS</span>: Imposto Seletivo. Um "imposto do pecado" extra sobre o que faz mal à saúde ou ao meio ambiente, como cigarro, bebidas alcoólicas e açucaradas, e extração de minérios.</li>
+        </ul>
+      </div>
+      <div class="col depois">
+        <h3>O que muda no dia a dia</h3>
+        <ul>
+          <li><strong>Mesma regra no Brasil inteiro.</strong> O IBS é calculado do mesmo jeito em qualquer estado.</li>
+          <li><strong>Cesta básica sem imposto.</strong> Uma lista nacional de alimentos básicos terá alíquota zero.</li>
+          <li><strong>Devolução para famílias de baixa renda.</strong> Quem está no Cadastro Único recebe de volta parte do imposto de itens como gás de cozinha, luz e água (o "cashback").</li>
+          <li><strong>Desconto para áreas essenciais.</strong> Saúde, educação, transporte coletivo e alguns outros setores terão alíquota reduzida.</li>
+          <li><strong>Pagamento dividido (split payment).</strong> O imposto vai direto ao governo no momento do pagamento. Veja mais na seção do Pix.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="texto">
+      <h3>Vai ficar mais caro ou mais barato?</h3>
+      <p>Depende do que você compra. Estimativas do governo apontam que a soma das alíquotas do IBS e da CBS ficará perto de <strong>28%</strong> para a maior parte dos produtos e serviços, e a lei prevê um mecanismo para impedir que isso suba demais. Esse número é uma estimativa e será ajustado com o tempo.</p>
+      <p>Na prática, a tendência é de <strong>alimentos básicos e remédios mais baratos</strong>. Já os <strong>serviços</strong> em geral, que hoje pagam pouco imposto, podem ficar mais caros. Produtos que hoje têm muitos benefícios fiscais podem subir de preço, enquanto os que ficam mais baratos em geral são aqueles com carga alta hoje.</p>
+    </div>
+  </div>
+</section>
+
+<section id="prazos">
+  <div class="wrap">
+    <h2>O que vem por aí: o calendário</h2>
+    <div class="texto">
+      <p>A mudança é lenta de propósito: oito anos de transição, para dar tempo de empresas e governos se adaptarem. Em 2026, a gente está só no começo.</p>
+    </div>
+    <ol class="tempo">
+      <li class="agora"><h3>2026 · Ano de teste <span class="etiqueta">estamos aqui</span></h3><p>CBS de 0,9% e IBS de 0,1% aparecem nas notas fiscais, mas servem de teste. Quem emite a nota corretamente fica dispensado de recolher esses valores. Os campos novos nas notas já são obrigatórios. Você não paga nada a mais.</p></li>
+      <li><h3>2027 · A CBS começa de verdade</h3><p>PIS e Cofins deixam de existir, o IPI cai a zero (exceto para a Zona Franca de Manaus) e o Imposto Seletivo passa a valer. O IBS ainda é só teste, com 0,1%.</p></li>
+      <li><h3>2028 · Mais um ano de teste do IBS</h3><p>Tudo continua como em 2027, enquanto estados e municípios finalizam o Comitê Gestor que vai arrecadar e dividir o IBS.</p></li>
+      <li><h3>2029 a 2032 · ICMS e ISS vão saindo</h3><p>A cada ano, o ICMS e o ISS diminuem e o IBS cresce: 90% e 10% em 2029, depois 80% e 20%, 70% e 30%, e 60% e 40% em 2032.</p></li>
+      <li><h3>2033 · O sistema novo completo</h3><p>ICMS e ISS acabam. Só restam CBS e IBS. Os benefícios fiscais antigos dos estados também terminam.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="mei">
+  <div class="wrap">
+    <h2>E o MEI?</h2>
+    <div class="texto">
+      <p class="lead">Em resumo: o MEI continua existindo, continua pagando uma guia fixa e não precisa calcular imposto novo. O risco está em como <em>os clientes</em> do MEI vão enxergá-lo.</p>
+    </div>
+
+    <h3 style="margin-top:2rem">Como é hoje e como vai ficar</h3>
+    <div class="tabela-rolagem">
+    <table>
+      <thead><tr><th></th><th>Hoje</th><th>Com a reforma</th></tr></thead>
+      <tbody>
+        <tr><th>Como paga</th><td>Uma guia mensal fixa, a DAS-MEI, de cerca de R$ 82 a R$ 87, dependendo da atividade.</td><td>Continua a guia fixa. Os valores de CBS e IBS ficam dentro dela, e o MEI não precisa calcular nada.</td></tr>
+        <tr><th>Limite de faturamento</th><td>R$ 81 mil por ano.</td><td>Segue em R$ 81 mil. Há propostas no Congresso para aumentar, mas nenhuma valendo até agora.</td></tr>
+        <tr><th>Nota fiscal</th><td>Obrigatória ao vender para empresa. Para consumidor, é dispensada.</td><td>Mesma regra. Os campos novos de CBS e IBS passam a existir nos sistemas de nota.</td></tr>
+        <tr><th>Crédito para o cliente</th><td>Cliente PJ do MEI quase não aproveita crédito de imposto.</td><td>O cliente PJ só aproveita crédito do pouco que o MEI efetivamente paga. Esse é o ponto de atenção.</td></tr>
+        <tr><th>Escolha</th><td>Só existe o regime do MEI.</td><td>O MEI poderá optar por recolher CBS e IBS no regime normal, fora da guia fixa. Isso dá crédito integral ao cliente, mas traz mais burocracia.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="caso">
+      <h3>Um caso para entender: Maria, MEI de marcenaria</h3>
+      <div class="cena">
+        <div>
+          <small>Se Maria vende para pessoas</small>
+          Nada muda no bolso dela nem no do cliente. Pessoa física não aproveita crédito de imposto.
+        </div>
+        <div>
+          <small>Se Maria vende para uma empresa</small>
+          A empresa cliente só desconta o crédito do que Maria paga de verdade, que é muito pouco. Comprando de uma empresa grande, o crédito seria maior. Maria pode perder negócio por causa disso.
+        </div>
+      </div>
+      <p style="margin-top:1rem;margin-bottom:0"><strong>O que Maria pode fazer:</strong> se a maior parte das vendas é para empresas, vale conversar com um contador sobre sair do regime fixo do MEI e recolher CBS e IBS normalmente. Se vende para o público, não há razão para mudar.</p>
+    </div>
+
+    <div class="texto">
+      <p>O MEI também pode ser desenquadrado se passar do limite de faturamento, e isso não é novidade da reforma. A diferença é que, depois de 2027, o desenquadramento significa entrar em regras de CBS e IBS bem mais trabalhosas que a guia fixa.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pix">
+  <div class="wrap">
+    <h2>O Pix vai ser taxado?</h2>
+    <div class="carimbo">NÃO</div>
+    <div class="texto">
+      <p class="lead">A reforma tributária não cria nenhum imposto sobre o Pix. Nem sobre transferir, nem sobre receber.</p>
+      <p>O Pix é só o meio de pagamento, como o dinheiro, o cartão ou o boleto. O que se tributa é a venda de produtos ou serviços, e não a forma de pagar. Se você paga R$ 100 numa compra via Pix, o imposto é o da compra, o mesmo que seria com cartão.</p>
+    </div>
+
+    <div class="veredito">
+      <div class="mito fato">
+        <h3>Fato: não existe imposto sobre o Pix</h3>
+        <p>O governo desmentiu várias vezes os boatos de taxação. Em janeiro de 2025, uma norma da Receita que ampliava o monitoramento gerou pânico e foi revogada em poucos dias. Mesmo assim, a mentira continua circulando todo ano.</p>
+      </div>
+      <div class="mito cuidado">
+        <h3>Atenção: monitoramento não é imposto</h3>
+        <p>Bancos e fintechs informam à Receita as movimentações acima de R$ 5 mil por mês (pessoa física) ou R$ 15 mil (empresa), sem detalhar com quem você fez o Pix. Isso serve para cruzar com o Imposto de Renda. Se sua renda for declarada, não há problema.</p>
+      </div>
+    </div>
+
+    <div class="texto">
+      <h3>Então o que é o "split payment" que todo mundo cita?</h3>
+      <p>Hoje, a loja recebe o valor cheio e depois paga o imposto no mês seguinte. No <em>split payment</em>, que deve ser implantado aos poucos, a parte do imposto é separada automaticamente <strong>na hora do pagamento</strong> e vai direto para o governo, enquanto o restante cai na conta da loja.</p>
+      <p>Isso vale para Pix, cartão e outros meios. Para quem compra, não muda nada: o preço e o jeito de pagar continuam iguais. Para quem vende, o dinheiro entra um pouco menor (já sem o imposto), mas o vendedor não precisa mais lembrar de pagar a guia. Isso ainda será regulamentado em detalhes.</p>
+    </div>
+
+    <div class="mito" style="margin-top:1.5rem">
+      <h3>Como se proteger de golpes</h3>
+      <p>Muitos golpes usam o medo da "taxação do Pix" para pedir dados ou pagamentos. Nem a Receita, nem o banco cobram imposto sobre Pix por mensagem, link ou WhatsApp. Se receber algo assim, não clique e confirme direto no aplicativo do seu banco.</p>
+    </div>
+  </div>
+</section>
+
+<section id="clubes">
+  <div class="wrap">
+    <h2>E os clubes e associações?</h2>
+    <div class="texto">
+      <p class="lead">Um clube social, como um clube esportivo ou recreativo, não é MEI e também não é uma empresa comum. A resposta para ele depende de <em>o que</em> cada receita é.</p>
+    </div>
+
+    <h3 style="margin-top:2rem">Como é hoje e como vai ficar</h3>
+    <div class="tabela-rolagem">
+    <table>
+      <thead><tr><th></th><th>Hoje</th><th>Com a reforma</th></tr></thead>
+      <tbody>
+        <tr><th>Imposto de Renda e CSLL</th><td>Não paga, porque a associação não tem lucro para distribuir.</td><td>Não muda. A reforma do consumo não mexe nesses impostos.</td></tr>
+        <tr><th>Mensalidade de sócio</th><td>Em geral não paga PIS/Cofins sobre a atividade própria do clube.</td><td>Ponto em aberto. A LC 227/2026 tirou da CBS e do IBS contribuições que servem só para manter a associação. Se o sócio recebe um serviço em troca (aulas, uso de quadra, restaurante), a situação pode ser outra.</td></tr>
+        <tr><th>Bar, restaurante, cantina</th><td>ICMS (estado) sobre as vendas.</td><td>CBS e IBS, com a troca gradual de 2027 a 2033.</td></tr>
+        <tr><th>Aluguel do salão, festas e eventos abertos</th><td>ISS (município).</td><td>CBS e IBS, no mesmo calendário.</td></tr>
+        <tr><th>Compras do clube</th><td>O imposto vem embutido no preço, e o clube quase não aproveita crédito.</td><td>Para a parte tributada, o clube passa a ter direito a crédito das compras. Entidades imunes, ao contrário, continuam pagando o imposto embutido.</td></tr>
+        <tr><th>Simples Nacional</th><td>Associações não podem optar.</td><td>Segue sem poder.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="texto">
+      <h3>Por que o clube não é "imune"</h3>
+      <p>A Constituição dispensa de IBS e CBS os templos, os partidos, os sindicatos e as entidades de educação e assistência social sem fins lucrativos, desde que cumpram as exigências do Código Tributário Nacional. Clube social ou esportivo, em regra, não entra nessa lista.</p>
+      <p>Mesmo as entidades imunes continuam pagando o imposto que vem embutido nas coisas que compram.</p>
+    </div>
+
+    <div class="aviso-final">
+      <strong>Dependendo do estatuto:</strong> a situação de cada clube depende do estatuto, das atividades que ele mantém e de como está registrado. Não dá para afirmar o enquadramento de um clube específico sem olhar esses documentos. O contador do clube deve confirmar.
+    </div>
+  </div>
+</section>
+
+<section id="simuladores">
+  <div class="wrap">
+    <h2>Simuladores</h2>
+    <div class="texto">
+      <p class="lead">Coloque números do seu caso e veja a ideia na prática. São estimativas simplificadas para entender a lógica da reforma, e não um cálculo oficial.</p>
+    </div>
+
+    <div class="global">
+      <label for="ref"><strong>Alíquota de referência (CBS + IBS):</strong></label>
+      <span><input type="number" id="ref" value="28" min="0" max="60" step="0.5"> %</span>
+      <small>Os cálculos usam a alíquota cheia, como será em 2033. Entre 2027 e 2032, a conta é uma mistura com os impostos antigos. 28% é a estimativa do governo, e o número final ainda será definido.</small>
+    </div>
+
+    <div class="abas" role="tablist" aria-label="Simuladores">
+      <button role="tab" id="tab-consumidor" aria-controls="p-consumidor" aria-selected="true">Consumidor</button>
+      <button role="tab" id="tab-mei" aria-controls="p-mei" aria-selected="false" tabindex="-1">MEI</button>
+      <button role="tab" id="tab-clube" aria-controls="p-clube" aria-selected="false" tabindex="-1">Clube</button>
+      <button role="tab" id="tab-pix" aria-controls="p-pix" aria-selected="false" tabindex="-1">Pix e pagamento</button>
+    </div>
+
+    <!-- CONSUMIDOR -->
+    <div class="painel" role="tabpanel" id="p-consumidor" aria-labelledby="tab-consumidor">
+      <div class="sim">
+        <div class="campos">
+          <p style="margin:0">Quanto do preço que você paga na loja é imposto de CBS e IBS?</p>
+          <div class="campo"><label for="c-preco">Preço na etiqueta (R$)</label><input type="number" id="c-preco" value="100" min="0" step="1"></div>
+          <div class="campo"><label for="c-cat">O que você está comprando</label><select id="c-cat"></select>
+            <small>Os descontos seguem a LC 214/2025. A lista exata de itens de cada categoria está nos anexos da lei.</small></div>
+        </div>
+        <div class="resultado" aria-live="polite">
+          <div class="linha"><span>Alíquota efetiva</span><span id="c-aliq"></span></div>
+          <div class="linha"><span>Preço sem imposto</span><span id="c-base"></span></div>
+          <div class="linha total"><span>Imposto no preço</span><span id="c-imp"></span></div>
+          <div class="fatia" aria-hidden="true"><i id="c-f1" style="background:var(--carimbo)"></i></div>
+          <div id="c-pct"></div>
+          <p class="msg" id="c-msg"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEI -->
+    <div class="painel" role="tabpanel" id="p-mei" aria-labelledby="tab-mei" hidden>
+      <div class="sim">
+        <div class="campos">
+          <div class="campo"><label for="m-ativ">Atividade do MEI</label>
+            <select id="m-ativ"><option value="1">Comércio ou indústria (ICMS)</option><option value="5" selected>Serviços (ISS)</option><option value="6">Comércio e serviços</option></select></div>
+          <div class="campo"><label for="m-fat">Faturamento médio por mês (R$)</label><input type="number" id="m-fat" value="5000" min="0" step="100"></div>
+          <div class="campo"><label for="m-pj">Quanto desse faturamento é de vendas para empresas (%)</label><input type="number" id="m-pj" value="40" min="0" max="100" step="5"></div>
+          <div class="campo"><label for="m-comp">Compras mensais com imposto embutido (R$)</label><input type="number" id="m-comp" value="1500" min="0" step="100"><small>Material e insumos comprados de empresas do regime normal.</small></div>
+          <div class="campo"><label for="m-sm">Salário mínimo (R$)</label><input type="number" id="m-sm" value="1621" min="0" step="1"><small>A parte do INSS da guia é 5% do salário mínimo.</small></div>
+        </div>
+        <div class="resultado" aria-live="polite">
+          <div class="linha"><span>Guia mensal (DAS-MEI)</span><span id="m-das"></span></div>
+          <div class="linha"><span>Faturamento no ano</span><span id="m-anual"></span></div>
+          <div class="linha"><span>Situação no limite de R$ 81 mil</span><span id="m-lim"></span></div>
+          <div class="linha"><span>Se saísse da guia fixa: CBS e IBS por mês (estimativa)</span><span id="m-normal"></span></div>
+          <div class="linha"><span>Crédito do cliente empresa com você, no regime normal (por mês)</span><span id="m-cred"></span></div>
+          <div class="linha"><span>Crédito do cliente empresa com você, na guia fixa</span><span>bem menor</span></div>
+          <p class="msg" id="m-msg"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLUBE -->
+    <div class="painel" role="tabpanel" id="p-clube" aria-labelledby="tab-clube" hidden>
+      <div class="sim">
+        <div class="campos">
+          <div class="campo"><label for="k-mens">Mensalidades dos sócios por mês (R$)</label><input type="number" id="k-mens" value="30000" min="0" step="500"></div>
+          <div class="campo"><label for="k-trat">Como a mensalidade é tratada</label>
+            <select id="k-trat"><option value="fora">Só para manter o clube (fora da CBS e IBS)</option><option value="tributa">O sócio recebe um serviço em troca (tributada)</option></select>
+            <small>É o ponto em aberto da reforma. Compare os dois resultados.</small></div>
+          <div class="campo"><label for="k-bar">Bar e restaurante por mês (R$)</label><input type="number" id="k-bar" value="20000" min="0" step="500"></div>
+          <div class="campo"><label for="k-evt">Aluguel de salão e eventos por mês (R$)</label><input type="number" id="k-evt" value="10000" min="0" step="500"></div>
+          <div class="campo"><label for="k-aula">Aulas e escolinhas por mês (R$)</label><input type="number" id="k-aula" value="8000" min="0" step="500"></div>
+          <div class="campo"><label for="k-comp">Compras com imposto embutido por mês (R$)</label><input type="number" id="k-comp" value="15000" min="0" step="500"><small>Insumos do bar, manutenção, material de eventos.</small></div>
+          <div class="campo"><label for="k-hoje">ISS/ICMS efetivo hoje sobre essas receitas (%)</label><input type="number" id="k-hoje" value="5" min="0" max="40" step="0.5"><small>Valor de exemplo. Pergunte ao contador do clube.</small></div>
+        </div>
+        <div class="resultado" aria-live="polite">
+          <div class="linha"><span>Receita tributada (bar, eventos, aulas<span id="k-mt"></span>)</span><span id="k-rt"></span></div>
+          <div class="linha"><span>CBS e IBS nas vendas</span><span id="k-deb"></span></div>
+          <div class="linha"><span>Crédito pelas compras</span><span id="k-cred"></span></div>
+          <div class="linha total"><span>CBS e IBS a pagar por mês</span><span id="k-liq"></span></div>
+          <div class="linha"><span>Hoje (ISS/ICMS, estimativa)</span><span id="k-hojev"></span></div>
+          <p class="msg" id="k-msg"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIX -->
+    <div class="painel" role="tabpanel" id="p-pix" aria-labelledby="tab-pix" hidden>
+      <div class="sim">
+        <div class="campos">
+          <div class="campo"><label for="x-val">Valor da compra (R$)</label><input type="number" id="x-val" value="200" min="0" step="10"></div>
+          <div class="campo"><label for="x-cat">O que foi vendido</label><select id="x-cat"></select></div>
+          <div class="campo"><label for="x-meio">Forma de pagamento</label>
+            <select id="x-meio"><option>Pix</option><option>Cartão</option><option>Boleto</option></select>
+            <small>Repare que o imposto é o mesmo em qualquer uma.</small></div>
+        </div>
+        <div class="resultado" aria-live="polite">
+          <div class="linha"><span>Você paga</span><span id="x-paga"></span></div>
+          <div class="linha"><span>Imposto sobre o Pix em si</span><span class="bom">R$ 0,00</span></div>
+          <div class="linha"><span>Imposto da compra (CBS e IBS)</span><span id="x-imp"></span></div>
+          <div class="linha"><span>Hoje: a loja recebe</span><span id="x-hoje"></span></div>
+          <div class="linha total"><span>Com split payment: a loja recebe</span><span id="x-loja"></span></div>
+          <p class="msg" id="x-msg"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="renda">
+  <div class="wrap">
+    <h2>Não confunda: a outra reforma</h2>
+    <div class="texto">
+      <p>Tudo acima é sobre impostos <strong>sobre consumo</strong>, os que estão embutidos no preço. Existe uma segunda mudança, separada, sobre o <strong>Imposto de Renda</strong>, aprovada em 2025 e com efeito a partir de 2026:</p>
+      <ul>
+        <li>Quem ganha até <strong>R$ 5 mil por mês</strong> deixa de pagar Imposto de Renda, com desconto gradual para quem ganha um pouco mais.</li>
+        <li>Quem tem renda muito alta passa a pagar um mínimo de imposto.</li>
+        <li>Dividendos (lucros distribuídos por empresas) acima de certo valor passam a ter cobrança.</li>
+      </ul>
+      <p>As regras detalhadas estão em lei própria. Confira os valores atuais no site da Receita Federal antes de planejar qualquer coisa.</p>
+    </div>
+  </div>
+</section>
+
+<section id="glossario">
+  <div class="wrap">
+    <h2>Glossário rápido</h2>
+    <div class="texto">
+      <details><summary>IVA (Imposto sobre Valor Agregado)</summary><p>Modelo usado em mais de 170 países. Cada empresa paga imposto só sobre o valor que acrescentou ao produto, descontando o que já foi pago antes.</p></details>
+      <details><summary>Não cumulatividade</summary><p>É a regra de "sem imposto em cima de imposto". O que uma empresa pagou ao comprar insumos vira crédito para abater do que ela vai pagar ao vender.</p></details>
+      <details><summary>Alíquota</summary><p>A porcentagem do imposto. Alíquota de 10% sobre R$ 100 significa R$ 10 de imposto.</p></details>
+      <details><summary>Alíquota de referência</summary><p>A alíquota "padrão" de CBS e IBS, calculada para o governo arrecadar o mesmo que hoje. Produtos com desconto pagam uma fração dela.</p></details>
+      <details><summary>Comitê Gestor do IBS</summary><p>Órgão de estados e municípios que vai arrecadar o IBS e dividir entre eles. Está sendo montado durante a transição.</p></details>
+      <details><summary>Cashback</summary><p>Devolução de parte do imposto para famílias de baixa renda, em itens essenciais como luz, água, gás e outros.</p></details>
+      <details><summary>DAS-MEI</summary><p>A guia mensal de pagamento do MEI, com valor fixo. Inclui INSS e, conforme a atividade, ICMS e/ou ISS.</p></details>
+      <details><summary>Split payment</summary><p>Pagamento dividido: o imposto é separado automaticamente do valor da compra no momento do pagamento.</p></details>
+    </div>
+
+    <div class="aviso-final">
+      <strong>Importante:</strong> esta página é uma explicação geral para quem não é do ramo, com informações conferidas em outubro de 2026. Regras e números podem mudar em novas leis e regulamentações. Para decisões do seu negócio, consulte um contador.
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Fontes consultadas:</p>
+    <ul>
+      <li><a href="https://www.serasaexperian.com.br/conteudos/cronograma-da-reforma-tributaria/">Serasa Experian: cronograma da reforma tributária</a></li>
+      <li><a href="https://taxup.com.br/solucoes/reforma-tributaria/calendario-transicao/">TaxUp: calendário da reforma tributária 2026 a 2033</a></li>
+      <li><a href="https://comsefaz.org.br/novo/reforma-tributaria-comeca-em-2026-com-periodo-de-adaptacao-destaque-informativo-dos-novos-tributos-e-dispensa-de-penalidades/">Comsefaz: reforma começa em 2026 com período de adaptação</a></li>
+      <li><a href="https://barbieriadvogados.com/lc-214/">Barbieri Advogados: guia da Lei Complementar 214/2025</a></li>
+      <li><a href="https://www.ibet.com.br/reforma-tributaria-brasileira-2025-lc-214-2025/">IBET: reforma tributária brasileira e a LC 214/2025</a></li>
+      <li><a href="https://simtax.com.br/imunidades-ibs-cbs-lei-complementar-214-2025/">Simtax: imunidades do IBS e da CBS</a></li>
+      <li><a href="https://www.mattosfilho.com.br/unico/reforma-tributaria-organizacoes-sem-fins-lucrativos/">Mattos Filho: reforma tributária e organizações sem fins lucrativos</a></li>
+      <li><a href="https://www.diariodepernambuco.com.br/economia/2026/01/11705186-receita-federal-volta-a-negar-taxacao-do-pix-e-alerta-para-golpes.html">Diário de Pernambuco: Receita volta a negar taxação do Pix</a></li>
+      <li><a href="https://www.folhape.com.br/economia/pix-acima-de-r-5-mil-veja-mitos-e-verdades/384071/">Folha de Pernambuco: Pix acima de R$ 5 mil, mitos e verdades</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // presença de cada tributo em cada ano (0 a 100)
+  var itens=[
+    {k:'PIS/Cofins',t:'velho'},{k:'IPI',t:'velho'},{k:'ICMS',t:'velho'},{k:'ISS',t:'velho'},
+    {k:'CBS',t:'novo'},{k:'IBS',t:'novo'}
+  ];
+  var anos={
+    2026:{v:[100,100,100,100,10,1],
+      d:'Tudo igual a hoje. CBS e IBS aparecem na nota como teste (0,9% e 0,1%), mas quem emite a nota certa não paga nada a mais.'},
+    2027:{v:[0,0,100,100,100,1],
+      d:'PIS, Cofins e IPI acabam. A CBS assume o lugar deles. O IBS ainda é teste, com 0,1%.'},
+    2028:{v:[0,0,100,100,100,1],
+      d:'Mesmo cenário de 2027. O IBS segue em teste enquanto o Comitê Gestor termina de ser montado.'},
+    2029:{v:[0,0,90,90,100,10],
+      d:'Começa a troca do ICMS e do ISS pelo IBS: 90% do antigo e 10% do novo.'},
+    2030:{v:[0,0,80,80,100,20],
+      d:'ICMS e ISS caem para 80%, e o IBS sobe para 20%.'},
+    2031:{v:[0,0,70,70,100,30],
+      d:'ICMS e ISS em 70%, IBS em 30%.'},
+    2032:{v:[0,0,60,60,100,40],
+      d:'Últimos anos da transição: ICMS e ISS em 60%, IBS em 40%.'},
+    2033:{v:[0,0,0,0,100,100],
+      d:'Fim da transição. Só existem CBS e IBS, com as mesmas regras em todo o país.'}
+  };
+  var ul=document.getElementById('linhas'),ex=document.getElementById('explica'),
+      ano=document.getElementById('ano'),sl=document.getElementById('slider');
+  itens.forEach(function(it){
+    var li=document.createElement('li');
+    li.className=it.t;
+    li.innerHTML='<span>'+it.k+'</span><span class="barra"><i></i></span><span class="pct"></span>';
+    ul.appendChild(li);
+  });
+  function desenha(a){
+    var d=anos[a];
+    ano.textContent=a;
+    ex.textContent=d.d;
+    var lis=ul.children;
+    for(var i=0;i<lis.length;i++){
+      var v=d.v[i];
+      lis[i].querySelector('i').style.width=v+'%';
+      var txt=v+'%';
+      // em 2026 e nos anos de teste, o valor nominal da CBS/IBS é diferente da barra
+      if(i===4&&a===2026)txt='teste';
+      if(i===5&&a<2029)txt='teste';
+      lis[i].querySelector('.pct').textContent=txt;
+    }
+  }
+  sl.addEventListener('input',function(){desenha(+sl.value)});
+  desenha(2026);
+})();
+</script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var brl=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+  var pct=new Intl.NumberFormat('pt-BR',{maximumFractionDigits:1});
+  function n(id){var v=parseFloat($(id).value);return isFinite(v)&&v>0?v:0}
+  function ref(){return n('ref')/100}
+  // parcela de imposto dentro de um valor cobrado, com alíquota calculada "por fora"
+  function dentro(valor,r){return valor*r/(1+r)}
+
+  var cats=[
+    {n:'Produto ou serviço em geral',red:0},
+    {n:'Alimento fora da cesta básica',red:.6},
+    {n:'Cesta básica nacional (arroz, feijão, leite, ovos...)',red:1},
+    {n:'Medicamento comum',red:.6},
+    {n:'Serviço de saúde',red:.6},
+    {n:'Educação (escola, curso)',red:.6},
+    {n:'Transporte coletivo',red:.6},
+    {n:'Profissional liberal (contador, advogado...)',red:.3}
+  ];
+  ['c-cat','x-cat'].forEach(function(id){
+    cats.forEach(function(c,i){var o=document.createElement('option');o.value=i;o.textContent=c.n;$(id).appendChild(o)});
+  });
+
+  function consumidor(){
+    var r=ref(),c=cats[+$('c-cat').value],re=r*(1-c.red),p=n('c-preco'),imp=dentro(p,re);
+    $('c-aliq').textContent=pct.format(re*100)+'%';
+    $('c-base').textContent=brl.format(p-imp);
+    $('c-imp').textContent=brl.format(imp);
+    var share=p>0?imp/p*100:0;
+    $('c-f1').style.width=share+'%';
+    $('c-pct').textContent=pct.format(share)+'% do preço é imposto de CBS e IBS';
+    $('c-msg').textContent=c.red===1?'Esse item tem alíquota zero. Na reforma, a cesta básica nacional não paga CBS nem IBS.'
+      :c.red>0?'A lei dá um desconto de '+(c.red*100)+'% na alíquota cheia para esta categoria.'
+      :'Essa categoria paga a alíquota cheia. Se o item tiver Imposto Seletivo, ele vem somado a este valor.';
+  }
+
+  function mei(){
+    var sm=n('m-sm'),a=+$('m-ativ').value,das=sm*.05+a;
+    var fat=n('m-fat'),anual=fat*12,r=ref();
+    $('m-das').textContent=brl.format(das);
+    $('m-anual').textContent=brl.format(anual);
+    var lim,cls='';
+    if(anual<=81000){lim='dentro do limite';cls='bom'}
+    else if(anual<=97200){lim='passou até 20%';cls='ruim'}
+    else{lim='passou mais de 20%';cls='ruim'}
+    $('m-lim').textContent=lim;$('m-lim').className=cls;
+    var comp=n('m-comp'),pj=n('m-pj')/100;
+    var normal=Math.max(0,dentro(fat,r)-dentro(comp,r));
+    $('m-normal').textContent=brl.format(normal);
+    $('m-cred').textContent=brl.format(dentro(fat*pj,r));
+    var msg;
+    if(anual>81000)msg='Esse faturamento passa do limite do MEI. Se a diferença for de até 20%, o MEI paga um complemento e segue; acima disso, o desenquadramento vale desde o início do ano. Fale com um contador.';
+    else if(pj<.3)msg='Como a maior parte das suas vendas é para pessoas, o crédito do cliente empresa pesa pouco. Na maioria dos casos, vale ficar na guia fixa.';
+    else msg='Com bastante venda para empresas, o seu cliente pode preferir comprar de quem dê crédito cheio. Compare o custo extra de sair da guia ('+brl.format(normal)+' por mês, estimativa) com o negócio que você pode perder, e fale com um contador antes de decidir.';
+    $('m-msg').textContent=msg;
+  }
+
+  function clube(){
+    var r=ref(),mens=n('k-mens'),trib=$('k-trat').value==='tributa';
+    var terc=n('k-bar')+n('k-evt')+n('k-aula');
+    var rt=terc+(trib?mens:0),fora=trib?0:mens;
+    var deb=dentro(rt,r),share=(rt+fora)>0?rt/(rt+fora):0;
+    var cred=dentro(n('k-comp'),r)*share,liq=deb-cred;
+    $('k-mt').textContent=trib?' e mensalidades':'';
+    $('k-rt').textContent=brl.format(rt);
+    $('k-deb').textContent=brl.format(deb);
+    $('k-cred').textContent='– '+brl.format(cred);
+    $('k-liq').textContent=brl.format(Math.max(0,liq));
+    $('k-hojev').textContent=brl.format(terc*n('k-hoje')/100);
+    var m;
+    if(liq<0)m='O crédito das compras é maior que o imposto das vendas: sobra um saldo de '+brl.format(-liq)+' a recuperar.';
+    else if(trib)m='Com a mensalidade tributada, o clube passa a pagar CBS e IBS também sobre o que os sócios pagam. Esse é o maior ponto de dúvida da reforma para clubes.';
+    else m='Com a mensalidade fora da CBS e do IBS, só as receitas com bar, eventos e aulas são tributadas. Só uma parte das compras gera crédito, porque o resto serve à atividade que não é tributada.';
+    $('k-msg').textContent=m;
+  }
+
+  function pix(){
+    var r=ref(),c=cats[+$('x-cat').value],re=r*(1-c.red),v=n('x-val'),imp=dentro(v,re);
+    $('x-paga').textContent=brl.format(v);
+    $('x-imp').textContent=brl.format(imp);
+    $('x-hoje').textContent=brl.format(v)+' (o imposto é pago depois)';
+    $('x-loja').textContent=brl.format(v-imp);
+    $('x-msg').textContent='O mesmo cálculo vale para '+$('x-meio').value+'. Para você, que paga, o valor e a forma de pagamento são iguais. A diferença está na loja: o imposto é separado na hora e vai direto ao governo. Versão simplificada: na prática, os créditos das compras da loja também entram na conta.';
+  }
+
+  var fns={consumidor:consumidor,mei:mei,clube:clube,pix:pix};
+  function tudo(){consumidor();mei();clube();pix()}
+  document.querySelectorAll('#simuladores input,#simuladores select').forEach(function(el){
+    el.addEventListener('input',tudo);
+  });
+
+  // abas
+  var abas=Array.prototype.slice.call(document.querySelectorAll('.abas [role=tab]'));
+  function abre(tab,foco){
+    abas.forEach(function(t){
+      var sel=t===tab;
+      t.setAttribute('aria-selected',sel);
+      t.tabIndex=sel?0:-1;
+      $(t.getAttribute('aria-controls')).hidden=!sel;
+    });
+    if(foco)tab.focus();
+  }
+  abas.forEach(function(t,i){
+    t.addEventListener('click',function(){abre(t)});
+    t.addEventListener('keydown',function(e){
+      var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;
+      if(d){abre(abas[(i+d+abas.length)%abas.length],true);e.preventDefault()}
+    });
+  });
+  tudo();
+})();
+</script>
+</body>
+</html>
