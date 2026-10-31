@@ -4,6 +4,17 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 
 ## 2026-10-30
 
+### Corrigido (conteúdo tributário, revisão independente)
+- MEI: o PLP 186/2026 foi sancionado em 21/10/2026 (R$ 110 mil em 2027 e R$ 140 mil em 2028); o texto dizia que nenhum projeto estava aprovado. Removida a menção ao PLP 108/2021, sem fonte. Fonte: Ministério do Empreendedorismo e Portal do Empreendedor.
+- MEI: o crédito do cliente não cita mais o art. 47, § 9º da LC 214 (esse parágrafo trata de combustíveis). Agora segue a Receita: o MEI não sofre incidência de IBS e CBS sobre as vendas, então o cliente tende a ter pouco ou nenhum crédito.
+- Simples híbrido: prazos trocados pelos oficiais (janela de 1 a 30/09/2026 e cancelamento até 30/11/2026, segundo a Fazenda; Simples encerrou em 15/10 e regime regular do IBS/CBS vai até 30/10/2026, segundo a Receita; nova janela em abril, segundo a Receita). Saiu o prazo de 20/12 e a janela de março, que vinham da Fenacon.
+- 26,5% deixou de ser tratado como teto: é referência da LC 214 (art. 475); se a estimativa passar disso, o governo deve enviar ao Congresso projeto para reduzir a carga. Texto do site e do `AGENTS.md` ajustados.
+- Associações: Imposto de Renda e CSLL "em regra" não incidem se cumprirem os requisitos da isenção; rendimentos financeiros costumam ser tributados.
+- Transporte público urbano (ônibus e metrô, com permissão ou concessão) agora é isento no simulador do consumidor, conforme art. 157 da LC 214 (antes tinha 60% de desconto).
+- Simulador do clube avisa que não considera a redução de 40% para bares e restaurantes (arts. 273 a 276); aluguel de salão ganhou ressalva.
+- Notas fiscais: explicado que o Simples tem calendário próprio (emissor nacional em 01/11/2026; CBS e IBS na nota a partir de 01/01/2027).
+- Novas fontes oficiais no rodapé.
+
 ### Corrigido (revisão técnica)
 - Simuladores: CBS e IBS exibidos agora somam exatamente o imposto total (o centavo que sobra vai para o IBS); no Simples, o total da opção 2 também fecha com as parcelas.
 - Simuladores: campos numéricos respeitam o `max` do HTML mesmo quando o valor é digitado (percentual de vendas para empresas e alíquotas) e limitam valores absurdos, que antes viravam infinito ou NaN.
