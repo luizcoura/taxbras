@@ -30,7 +30,7 @@ Não há build, dependências nem framework. Para ver localmente, abra `index.ht
 - **Público:** leigo. Frases curtas, sem jargão sem explicação. Termos técnicos entram no glossário.
 - **Conteúdo tributário:** só afirme o que tem fonte (Planalto, Receita Federal, Ministério da Fazenda, Agência Senado). Quando depender de regulamentação, diga isso no texto em vez de afirmar. Os simuladores são estimativas didáticas, não cálculo oficial.
 - **Pontos pouco confirmados** (manter com ressalva): associações e Simples ("em regra"), PIS/Cofins sobre mensalidade ("em geral"), redução de 30% para profissionais, percentuais do cashback, lista de remédios com alíquota zero.
-- **Data de conferência:** ao revisar o conteúdo, atualize "Conteúdo conferido em ..." no rodapé do `index.html` e o `lastmod` no `sitemap.xml`.
+- **Data de conferência:** sempre que mudar ou revisar o conteúdo, atualize "Conteúdo conferido em ..." no rodapé do `index.html` e o `lastmod` da página alterada no `sitemap.xml`.
 - **Alíquota:** cálculo "por fora". O imposto embutido no preço é `preço × r / (1 + r)`. A alíquota de referência padrão nos simuladores é 26,5% (teto legal).
 - **MEI 2026:** DAS de R$ 82,05 (comércio/indústria), R$ 86,05 (transporte) e R$ 87,05 (serviços), limite de R$ 81 mil. Atualize se o salário mínimo mudar.
 
