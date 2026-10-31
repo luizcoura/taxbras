@@ -4,6 +4,15 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 
 ## 2026-10-30
 
+### Corrigido (revisão técnica)
+- Simuladores: CBS e IBS exibidos agora somam exatamente o imposto total (o centavo que sobra vai para o IBS); no Simples, o total da opção 2 também fecha com as parcelas.
+- Simuladores: campos numéricos respeitam o `max` do HTML mesmo quando o valor é digitado (percentual de vendas para empresas e alíquotas) e limitam valores absurdos, que antes viravam infinito ou NaN.
+- Modo escuro: texto em destaque do bloco de exemplo e etiqueta "estamos aqui" com contraste adequado (antes cerca de 1,2:1 e 3,1:1).
+- Estilos inline movidos para `style.css`, como manda o `AGENTS.md`.
+- Recibo (calendário): 2027 e 2033 não dizem mais que "acabam" todos os tributos antigos; citam a exceção do IPI na Zona Franca e a permanência do Imposto Seletivo.
+- Simulador do MEI: a mensagem de excesso de faturamento agora diz que o MEI deixa de ser MEI em janeiro do ano seguinte.
+- `AGENTS.md`: rótulos do DAS do MEI corrigidos (R$ 86,05 é serviços; R$ 87,05 é comércio e serviços).
+
 ### Adicionado
 - Aba "Simples Nacional" nos simuladores: compara deixar CBS e IBS dentro da guia (crédito do cliente limitado ao que foi pago no DAS) com recolhê-los por fora (Simples híbrido, crédito cheio). Fontes: Fenacon e Contábeis.
 - Página principal (`index.html`) explicando a reforma tributária (CBS, IBS, Imposto Seletivo): como é hoje, o que muda, calendário 2026–2033, MEI, Pix, clubes e associações, Imposto de Renda e glossário.

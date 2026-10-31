@@ -82,7 +82,7 @@ header.topo p.lead{max-width:36rem;margin-top:1.2rem}
 .exemplo{background:var(--tinta);color:var(--papel);padding:1.5rem;margin:1.5rem 0}
 .exemplo h3{color:var(--papel)}
 .exemplo p{color:inherit;opacity:.92}
-.exemplo strong{color:#fff}
+.exemplo strong{color:inherit}
 
 /* linha do tempo */
 .tempo{list-style:none;padding:0;margin:1.5rem 0;border-left:3px solid var(--tinta);margin-left:.5rem}
@@ -91,7 +91,7 @@ header.topo p.lead{max-width:36rem;margin-top:1.2rem}
 .tempo li.agora::before{background:var(--carimbo);border-color:var(--carimbo)}
 .tempo h3{font-size:1.2rem}
 .tempo p{font-size:1rem;margin:0;color:var(--tinta-suave)}
-.etiqueta{display:inline-block;font-family:var(--titulo);font-weight:700;font-size:.8rem;background:var(--carimbo);color:#fff;padding:.1rem .55rem;margin-left:.4rem;vertical-align:2px;transform:rotate(-2deg)}
+.etiqueta{display:inline-block;font-family:var(--titulo);font-weight:700;font-size:.8rem;background:var(--carimbo);color:var(--papel);padding:.1rem .55rem;margin-left:.4rem;vertical-align:2px;transform:rotate(-2deg)}
 
 /* MEI */
 table{width:100%;border-collapse:collapse;background:var(--branco);font-size:1rem;line-height:1.45;margin:1.2rem 0}
@@ -179,3 +179,15 @@ input[type=number],select{font:inherit;font-size:1rem;width:100%;padding:.5rem .
 .pergunta p:last-child{margin-bottom:0}
 .curta{font-weight:600}
 .mais{font-family:var(--titulo);font-weight:700;font-size:.95rem}
+
+/* utilitários (substituem estilos inline) */
+.assinatura{margin-top:.8rem;font-family:var(--titulo);font-weight:700}
+.sr{position:absolute;left:-9999px}
+.cor-velho{background:var(--carimbo)}
+.cor-novo{background:var(--verde)}
+.sem-margem{margin:0}
+.sem-margem-baixo{margin-bottom:0}
+.mt-1{margin-top:1rem}
+.mt-12{margin-top:1.2rem}
+.mt-15{margin-top:1.5rem}
+.mt-2{margin-top:2rem}

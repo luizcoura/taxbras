@@ -57,7 +57,7 @@
     <div>
       <h1>A reforma tributária, sem juridiquês</h1>
       <p class="lead">Os impostos sobre o que a gente compra vão mudar bastante até 2033. Aqui está o que acontece com o preço das coisas, com o MEI e com o Pix, do jeito que é hoje e do jeito que vai ficar.</p>
-      <p style="margin-top:.8rem;font-family:var(--titulo);font-weight:700">RESET: Reforma Explicada Sem Enrolação Tributária.</p>
+      <p class="assinatura">RESET: Reforma Explicada Sem Enrolação Tributária.</p>
       <nav class="nav" aria-label="Seções">
         <a href="#resumo">Resumo</a>
         <a href="#hoje">Como é hoje</a>
@@ -79,12 +79,12 @@
       <div class="ano" id="ano" aria-live="polite">2026</div>
       <ul class="linhas" id="linhas"></ul>
       <p class="explica" id="explica"></p>
-      <label for="slider" class="sr" style="position:absolute;left:-9999px">Ano</label>
+      <label for="slider" class="sr">Ano</label>
       <input class="slider" type="range" id="slider" min="2026" max="2033" step="1" value="2026">
       <div class="marcas" aria-hidden="true"><span>2026</span><span>2029</span><span>2033</span></div>
       <div class="legenda">
-        <span><b style="background:var(--carimbo)"></b>imposto antigo</span>
-        <span><b style="background:var(--verde)"></b>imposto novo</span>
+        <span><b class="cor-velho"></b>imposto antigo</span>
+        <span><b class="cor-novo"></b>imposto novo</span>
       </div>
     </aside>
   </div>
@@ -209,7 +209,7 @@
       <p class="lead">Em resumo: o MEI continua existindo, continua pagando uma guia fixa e não precisa calcular imposto novo. O risco está em como <em>os clientes</em> do MEI vão enxergá-lo.</p>
     </div>
 
-    <h3 style="margin-top:2rem">Como é hoje e como vai ficar</h3>
+    <h3 class="mt-2">Como é hoje e como vai ficar</h3>
     <div class="tabela-rolagem">
     <table>
       <thead><tr><th></th><th>Hoje</th><th>Com a reforma</th></tr></thead>
@@ -235,7 +235,7 @@
           A empresa cliente só desconta o crédito do que Maria paga de verdade, que é muito pouco. Comprando de uma empresa grande, o crédito seria maior. Maria pode perder negócio por causa disso.
         </div>
       </div>
-      <p style="margin-top:1rem;margin-bottom:0"><strong>O que Maria pode fazer:</strong> se a maior parte das vendas é para empresas, vale conversar com um contador sobre deixar de ser MEI, virar microempresa do Simples e recolher CBS e IBS pelo regime regular. Se vende para o público, não há razão para mudar.</p>
+      <p class="sem-margem-baixo mt-1"><strong>O que Maria pode fazer:</strong> se a maior parte das vendas é para empresas, vale conversar com um contador sobre deixar de ser MEI, virar microempresa do Simples e recolher CBS e IBS pelo regime regular. Se vende para o público, não há razão para mudar.</p>
     </div>
 
     <div class="texto">
@@ -270,7 +270,7 @@
       <p>Isso vale para Pix, cartão e outros meios. Para quem compra, não muda nada: o preço e o jeito de pagar continuam iguais. Para quem vende, o dinheiro entra um pouco menor (já sem o imposto), mas o vendedor não precisa mais lembrar de pagar a guia. Isso ainda será regulamentado em detalhes.</p>
     </div>
 
-    <div class="mito" style="margin-top:1.5rem">
+    <div class="mito mt-15">
       <h3>Como se proteger de golpes</h3>
       <p>Muitos golpes usam o medo da "taxação do Pix" para pedir dados ou pagamentos. Nem a Receita, nem o banco cobram imposto sobre Pix por mensagem, link ou WhatsApp. Se receber algo assim, não clique e confirme direto no aplicativo do seu banco.</p>
     </div>
@@ -284,7 +284,7 @@
       <p class="lead">Um clube social, como um clube esportivo ou recreativo, não é MEI e também não é uma empresa comum. A resposta para ele depende de <em>o que</em> cada receita é.</p>
     </div>
 
-    <h3 style="margin-top:2rem">Como é hoje e como vai ficar</h3>
+    <h3 class="mt-2">Como é hoje e como vai ficar</h3>
     <div class="tabela-rolagem">
     <table>
       <thead><tr><th></th><th>Hoje</th><th>Com a reforma</th></tr></thead>
@@ -339,7 +339,7 @@
     <div class="painel" role="tabpanel" id="p-consumidor" aria-labelledby="tab-consumidor">
       <div class="sim">
         <div class="campos">
-          <p style="margin:0">Quanto do preço que você paga na loja é imposto de CBS e IBS?</p>
+          <p class="sem-margem">Quanto do preço que você paga na loja é imposto de CBS e IBS?</p>
           <div class="campo"><label for="c-preco">Preço na etiqueta (R$)</label><input type="number" id="c-preco" value="100" min="0" step="1"></div>
           <div class="campo"><label for="c-cat">O que você está comprando</label><select id="c-cat"></select>
             <small>Os descontos seguem a LC 214/2025. A lista exata de itens de cada categoria está nos anexos da lei.</small></div>
@@ -351,7 +351,7 @@
           <div class="linha"><span>Desse total, CBS</span><span id="c-cbs"></span></div>
           <div class="linha"><span>Desse total, IBS</span><span id="c-ibs"></span></div>
           <div class="linha"><span>Imposto como parte do que você paga</span><span id="c-share"></span></div>
-          <div class="fatia" aria-hidden="true"><i id="c-f1" style="background:var(--carimbo)"></i></div>
+          <div class="fatia" aria-hidden="true"><i id="c-f1" class="cor-velho"></i></div>
           <p class="msg" id="c-conta"></p>
           <p class="msg" id="c-msg"></p>
         </div>
@@ -389,7 +389,7 @@
     <div class="painel" role="tabpanel" id="p-simples" aria-labelledby="tab-simples" hidden>
       <div class="sim">
         <div class="campos">
-          <p style="margin:0">Quem está no Simples Nacional pode deixar a CBS e o IBS dentro da guia (DAS) ou recolhê-los por fora, pelas regras do regime normal, mantendo o resto no Simples. Compare as duas opções.</p>
+          <p class="sem-margem">Quem está no Simples Nacional pode deixar a CBS e o IBS dentro da guia (DAS) ou recolhê-los por fora, pelas regras do regime normal, mantendo o resto no Simples. Compare as duas opções.</p>
           <div class="campo"><label for="s-fat">Faturamento médio por mês (R$)</label><input type="number" id="s-fat" value="40000" min="0" step="1000"></div>
           <div class="campo"><label for="s-pj">Quanto desse faturamento é de vendas para empresas (%)</label><input type="number" id="s-pj" value="40" min="0" max="100" step="5"></div>
           <div class="campo"><label for="s-comp">Compras mensais com imposto embutido (R$)</label><input type="number" id="s-comp" value="10000" min="0" step="500"><small>Material e insumos comprados de empresas do regime normal.</small></div>
@@ -540,7 +540,7 @@
     2026:{v:[100,100,100,100,10,1],
       d:'Tudo igual a hoje. CBS e IBS aparecem na nota como teste (0,9% e 0,1%), mas quem emite a nota certa não paga nada a mais.'},
     2027:{v:[0,0,100,100,100,1],
-      d:'PIS, Cofins e IPI acabam. A CBS assume o lugar deles. O IBS ainda é teste, com 0,1%.'},
+      d:'PIS e Cofins acabam e a CBS assume o lugar deles. O IPI cai a zero, exceto para a Zona Franca de Manaus. O Imposto Seletivo passa a valer. O IBS ainda é teste, com 0,1%.'},
     2028:{v:[0,0,100,100,100,1],
       d:'Mesmo cenário de 2027. O IBS segue em teste enquanto o Comitê Gestor termina de ser montado.'},
     2029:{v:[0,0,90,90,100,10],
@@ -552,7 +552,7 @@
     2032:{v:[0,0,60,60,100,40],
       d:'Últimos anos da transição: ICMS e ISS em 60%, IBS em 40%.'},
     2033:{v:[0,0,0,0,100,100],
-      d:'Fim da transição. Só existem CBS e IBS, com as mesmas regras em todo o país.'}
+      d:'Fim da transição. CBS e IBS substituem PIS, Cofins, ICMS e ISS, com as mesmas regras em todo o país. O Imposto Seletivo segue sobre itens como cigarro e bebidas, e o IPI continua só na exceção da Zona Franca de Manaus.'}
   };
   var ul=document.getElementById('linhas'),ex=document.getElementById('explica'),
       ano=document.getElementById('ano'),sl=document.getElementById('slider');
@@ -586,12 +586,17 @@
   var $=function(id){return document.getElementById(id)};
   var brl=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
   var pct=new Intl.NumberFormat('pt-BR',{maximumFractionDigits:1});
-  function n(id){var v=parseFloat($(id).value);return isFinite(v)&&v>0?v:0}
+  // lê o campo e respeita o max do HTML (digitar passa por cima do max do navegador); sem max, limita a R$ 1 bilhão
+  function n(id){var el=$(id),v=parseFloat(el.value),mx=parseFloat(el.max);
+    if(!isFinite(v)||v<0)return 0;
+    return Math.min(v,isFinite(mx)?mx:1e9)}
+  // arredonda para centavos, para que as partes exibidas fechem com o total
+  function c2(x){return Math.round(x*100)/100}
   function refC(){return n('ref-cbs')/100}
   function refI(){return n('ref-ibs')/100}
   function ref(){return refC()+refI()}
-  // divide um imposto total entre CBS e IBS, na proporção das alíquotas
-  function partes(imp){var t=ref();return t>0?[imp*refC()/t,imp*refI()/t]:[0,0]}
+  // divide um imposto total entre CBS e IBS, na proporção das alíquotas; o IBS leva o centavo que sobra
+  function partes(imp){var t=ref(),i=c2(imp);if(!(t>0))return [0,0];var cbs=c2(i*refC()/t);return [cbs,c2(i-cbs)]}
   // parcela de imposto dentro de um valor cobrado, com alíquota calculada "por fora"
   function dentro(valor,r){return valor*r/(1+r)}
 
@@ -610,15 +615,15 @@
   });
 
   function consumidor(){
-    var r=ref(),c=cats[+$('c-cat').value],re=r*(1-c.red),p=n('c-preco'),imp=dentro(p,re);
+    var r=ref(),c=cats[+$('c-cat').value],re=r*(1-c.red),p=n('c-preco'),imp=c2(dentro(p,re));
     $('c-aliq').textContent=pct.format(re*100)+'%';
-    $('c-base').textContent=brl.format(p-imp);
+    $('c-base').textContent=brl.format(c2(p-imp));
     $('c-imp').textContent=brl.format(imp);
     var pt=partes(imp);$('c-cbs').textContent=brl.format(pt[0]);$('c-ibs').textContent=brl.format(pt[1]);
     var share=p>0?imp/p*100:0;
     $('c-f1').style.width=share+'%';
     $('c-share').textContent=pct.format(share)+'%';
-    $('c-conta').textContent='Como a conta é feita: a alíquota de '+pct.format(re*100)+'% incide sobre o preço sem imposto. '+brl.format(p-imp)+' + '+brl.format(imp)+' de imposto = '+brl.format(p)+', o que você paga. Fórmula: imposto = preço na etiqueta × alíquota ÷ (1 + alíquota).';
+    $('c-conta').textContent='Como a conta é feita: a alíquota de '+pct.format(re*100)+'% incide sobre o preço sem imposto. '+brl.format(c2(p-imp))+' + '+brl.format(imp)+' de imposto = '+brl.format(p)+', o que você paga. Fórmula: imposto = preço na etiqueta × alíquota ÷ (1 + alíquota).';
     $('c-msg').textContent=c.red===1?'Esse item tem alíquota zero. Na reforma, a cesta básica nacional não paga CBS nem IBS.'
       :c.red>0?'A lei dá um desconto de '+(c.red*100)+'% na alíquota cheia para esta categoria.'
       :'Essa categoria paga a alíquota cheia. Se o item tiver Imposto Seletivo, ele vem somado a este valor.';
@@ -635,14 +640,14 @@
     else{lim='passou mais de 20%';cls='ruim'}
     $('m-lim').textContent=lim;$('m-lim').className=cls;
     var comp=n('m-comp'),pj=n('m-pj')/100;
-    var normal=Math.max(0,dentro(fat,r)-dentro(comp,r));
+    var normal=c2(Math.max(0,dentro(fat,r)-dentro(comp,r)));
     $('m-normal').textContent=brl.format(normal);
-    var cred=dentro(fat*pj,r),pn=partes(normal),pc=partes(cred);
+    var cred=c2(dentro(fat*pj,r)),pn=partes(normal),pc=partes(cred);
     $('m-cred').textContent=brl.format(cred);
     $('m-ncbs').textContent=brl.format(pn[0]);$('m-nibs').textContent=brl.format(pn[1]);
     $('m-ccbs').textContent=brl.format(pc[0]);$('m-cibs').textContent=brl.format(pc[1]);
     var msg;
-    if(anual>81000)msg='Esse faturamento passa do limite do MEI. Se a diferença for de até 20%, o MEI paga um complemento e segue; acima disso, o desenquadramento vale desde o início do ano. Fale com um contador.';
+    if(anual>81000)msg='Esse faturamento passa do limite do MEI. Se a diferença for de até 20%, o MEI paga um complemento sobre o excesso, mas deixa de ser MEI a partir de janeiro do ano seguinte; acima de 20%, o desenquadramento vale desde o início do ano. Fale com um contador.';
     else if(pj<.3)msg='Como a maior parte das suas vendas é para pessoas, o crédito do cliente empresa pesa pouco. Na maioria dos casos, vale ficar na guia fixa.';
     else msg='Com bastante venda para empresas, o seu cliente pode preferir comprar de quem dê crédito cheio. Compare o custo extra de sair da guia ('+brl.format(normal)+' por mês, estimativa) com o negócio que você pode perder, e fale com um contador antes de decidir.';
     $('m-msg').textContent=msg;
@@ -650,10 +655,10 @@
 
   function simples(){
     var r=ref(),fat=n('s-fat'),pj=n('s-pj')/100,comp=n('s-comp'),al=n('s-aliq')/100,parte=Math.min(n('s-parte'),100)/100;
-    var das=fat*al,dentroGuia=das*parte,resto=das-dentroGuia;
-    var credP=fat*pj*al*parte;
-    var reg=Math.max(0,dentro(fat,r)-dentro(comp,r)),ph=partes(reg);
-    var credH=dentro(fat*pj,r),totP=das,totH=resto+reg;
+    var das=c2(fat*al),dentroGuia=c2(das*parte),resto=c2(das-dentroGuia);
+    var credP=c2(fat*pj*al*parte);
+    var reg=c2(Math.max(0,dentro(fat,r)-dentro(comp,r))),ph=partes(reg);
+    var credH=c2(dentro(fat*pj,r)),totP=das,totH=c2(resto+reg);
     $('s-das').textContent=brl.format(das);
     $('s-p-tot').textContent=brl.format(totP);
     $('s-p-cred').textContent=brl.format(credP);
@@ -662,7 +667,7 @@
     $('s-h-cbs').textContent=brl.format(ph[0]);
     $('s-h-ibs').textContent=brl.format(ph[1]);
     $('s-h-cred').textContent=brl.format(credH);
-    var dif=totH-totP;
+    var dif=c2(totH-totP);
     $('s-dif').textContent=(dif>0?'+ ':dif<0?'– ':'')+brl.format(Math.abs(dif))+' por mês';
     $('s-dif').className=dif>0?'ruim':dif<0?'bom':'';
     var m;
@@ -677,14 +682,14 @@
     var r=ref(),mens=n('k-mens'),trib=$('k-trat').value==='tributa';
     var terc=n('k-bar')+n('k-evt')+n('k-aula');
     var rt=terc+(trib?mens:0),fora=trib?0:mens;
-    var deb=dentro(rt,r),share=(rt+fora)>0?rt/(rt+fora):0;
-    var cred=dentro(n('k-comp'),r)*share,liq=deb-cred;
+    var deb=c2(dentro(rt,r)),share=(rt+fora)>0?rt/(rt+fora):0;
+    var cred=c2(dentro(n('k-comp'),r)*share),liq=c2(deb-cred);
     $('k-mt').textContent=trib?' e mensalidades':'';
     $('k-rt').textContent=brl.format(rt);
     $('k-deb').textContent=brl.format(deb);
     $('k-cred').textContent='– '+brl.format(cred);
     $('k-liq').textContent=brl.format(Math.max(0,liq));
-    $('k-hojev').textContent=brl.format(terc*n('k-hoje')/100);
+    $('k-hojev').textContent=brl.format(c2(terc*n('k-hoje')/100));
     var m;
     if(liq<0)m='O crédito das compras é maior que o imposto das vendas: sobra um saldo de '+brl.format(-liq)+' a recuperar.';
     else if(trib)m='Com a mensalidade tributada, o clube passa a pagar CBS e IBS também sobre o que os sócios pagam. Esse é o maior ponto de dúvida da reforma para clubes.';
@@ -693,12 +698,12 @@
   }
 
   function pix(){
-    var r=ref(),c=cats[+$('x-cat').value],re=r*(1-c.red),v=n('x-val'),imp=dentro(v,re);
+    var r=ref(),c=cats[+$('x-cat').value],re=r*(1-c.red),v=n('x-val'),imp=c2(dentro(v,re));
     $('x-paga').textContent=brl.format(v);
     $('x-imp').textContent=brl.format(imp);
     var px=partes(imp);$('x-cbs').textContent=brl.format(px[0]);$('x-ibs').textContent=brl.format(px[1]);
     $('x-hoje').textContent=brl.format(v)+' (o imposto é pago depois)';
-    $('x-loja').textContent=brl.format(v-imp);
+    $('x-loja').textContent=brl.format(c2(v-imp));
     $('x-msg').textContent='O mesmo cálculo vale para '+$('x-meio').value+'. Para você, que paga, o valor e a forma de pagamento são iguais. A diferença está na loja: o imposto é separado na hora e vai direto ao governo. Versão simplificada: na prática, os créditos das compras da loja também entram na conta.';
   }
 
