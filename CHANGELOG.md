@@ -2,6 +2,31 @@
 
 Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). O site tem versão, mostrada no rodapé das duas páginas. Regra: a primeira parte muda numa reestruturação grande; a segunda, em recurso novo ou revisão de conteúdo; a terceira, em correção pontual. A 1.0.0 reúne tudo o que foi feito antes de a numeração existir.
 
+## 1.4.0 · 2026-10-30 · fontes datadas, simuladores e correções da segunda revisão
+
+### Adicionado
+- Fontes do rodapé com a data de publicação (ou de atualização) que consta em cada página, separadas em oficiais e imprensa/entidades, da mais recente para a mais antiga. Páginas sem data dizem isso; as que não abriram dizem "data não verificada".
+
+### Removido
+- Simulador do clube: aplicava alíquota cheia a bar, aluguel, eventos e aulas e rateava o crédito sem fundamento legal (a segunda revisão independente apontou o problema). A seção "E os clubes e associações?" continua explicando o assunto em texto.
+
+### Alterado (simuladores)
+- MEI: novo campo "Meses de atividade neste ano" (1 a 12); o limite passa a ser proporcional (R$ 6.750 por mês) e o faturamento anual é a média mensal vezes os meses. O rótulo do "custo extra" agora diz exatamente o que o número é: CBS e IBS líquidos estimados, sem contar o DAS que deixaria de pagar nem outros tributos.
+- Pergunta sobre o limite do MEI informa o limite proporcional no ano de abertura (R$ 6.750 por mês de atividade).
+- MEI e Simples: o saldo credor (compras maiores que vendas) aparece na mensagem, em vez de sumir.
+- Simples: com CBS e IBS de referência zerados, a mensagem avisa que a comparação não faz sentido (antes falava em "crédito cheio" de R$ 0,00 contra R$ 384,00).
+- Campos numéricos: um aviso junto do campo diz qual valor foi realmente usado quando o digitado está vazio, negativo ou acima do limite (por exemplo, "Valor fora do limite permitido. O cálculo usou 100%").
+
+### Corrigido
+- Aba Pix estourava a largura em telas de 390px (427px, e 513px com valores enormes); o rodapé também. Agora a página e as quatro abas ficam em 390px.
+- Prazos do Simples híbrido: cancelamento da opção de 03/11 a 20/12/2026 e opção até 15/10 (Simples) e 30/10 (regime regular), conforme a Resolução CGSN nº 194 (Fazenda, 29/09/2026). A 1.2.0 trouxe 30/11, de uma página de abril desatualizada.
+- Imunidade: "sindicatos" virou "entidades sindicais dos trabalhadores" (LC 214, art. 9º, III).
+- Resumo e calendário (2033) não dizem mais que só restam CBS e IBS: citam o Imposto Seletivo e a exceção do IPI.
+- Calendário de 2026: o campo novo da nota é obrigatório para o regime normal; o Simples tem calendário próprio.
+- Crédito do cliente do MEI no simulador: "pouco ou nenhum" (antes "bem menor").
+- Transporte público urbano: citada também a hipótese de autorização, além de permissão e concessão.
+- Alíquotas dos simuladores descritas como cenário hipotético de regime completo, não "como será em 2033".
+
 ## 1.3.0 · 2026-10-30
 
 ### Adicionado
@@ -11,12 +36,12 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 
 ### Corrigido (revisão independente, com fontes oficiais)
 - MEI: o PLP 186/2026 foi sancionado em 21/10/2026 (R$ 110 mil em 2027 e R$ 140 mil em 2028); o texto dizia que nenhum projeto estava aprovado. Removida a menção ao PLP 108/2021, sem fonte. Fonte: Ministério do Empreendedorismo e Portal do Empreendedor.
-- MEI: o crédito do cliente não cita mais o art. 47, § 9º da LC 214 (esse parágrafo trata de combustíveis). Agora segue a Receita: o MEI não sofre incidência de IBS e CBS sobre as vendas, então o cliente tende a ter pouco ou nenhum crédito.
-- Simples híbrido: prazos trocados pelos oficiais (janela de 1 a 30/09/2026 e cancelamento até 30/11/2026, segundo a Fazenda; Simples encerrou em 15/10 e regime regular do IBS/CBS vai até 30/10/2026, segundo a Receita; nova janela em abril, segundo a Receita). Saiu o prazo de 20/12 e a janela de março, que vinham da Fenacon.
+- MEI: o crédito do cliente não cita mais o art. 47, § 9º da LC 214 como regra do MEI (a revisão independente informa que esse parágrafo trata do Simples Nacional; esta entrada dizia, por engano, que tratava de combustíveis, e o texto do artigo não foi reconferido). Agora segue a Receita: o MEI não sofre incidência de IBS e CBS sobre as vendas, então o cliente tende a ter pouco ou nenhum crédito.
+- Simples híbrido: prazos trocados por fontes oficiais. ATENÇÃO: o cancelamento até 30/11/2026 estava errado e foi corrigido na 1.4.0.
 - 26,5% deixou de ser tratado como teto: é referência da LC 214 (art. 475); se a estimativa passar disso, o governo deve enviar ao Congresso projeto para reduzir a carga. Texto do site e do `AGENTS.md` ajustados.
 - Associações: Imposto de Renda e CSLL "em regra" não incidem se cumprirem os requisitos da isenção; rendimentos financeiros costumam ser tributados.
 - Transporte público urbano (ônibus e metrô, com permissão ou concessão) agora é isento no simulador do consumidor, conforme art. 157 da LC 214 (antes tinha 60% de desconto).
-- Simulador do clube avisa que não considera a redução de 40% para bares e restaurantes (arts. 273 a 276); aluguel de salão ganhou ressalva.
+- Simulador do clube ganhou aviso sobre a redução de 40% para bares e restaurantes (arts. 273 a 276) e aluguel de salão ganhou ressalva; o simulador foi removido na 1.4.0.
 - Notas fiscais: explicado que o Simples tem calendário próprio (emissor nacional em 01/11/2026; CBS e IBS na nota a partir de 01/01/2027).
 - Novas fontes oficiais no rodapé.
 
@@ -54,6 +79,6 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 - CSS extraído do `index.html` para `style.css`, compartilhado pelas duas páginas.
 
 ### Corrigido
-- Conteúdo revisado contra fontes oficiais: alíquota de referência (teto legal de 26,5%, estimativas entre 26,5% e 28%), regras do MEI, motivo do monitoramento do Pix, clubes e Imposto de Renda.
+- Conteúdo revisado contra fontes oficiais: alíquota de referência (teto legal de 26,5%, afirmação posteriormente superada na 1.2.0; estimativas entre 26,5% e 28%), regras do MEI, motivo do monitoramento do Pix, clubes e Imposto de Renda.
 - Tabelas do MEI e do clube escondiam a coluna "Com a reforma" no celular; agora viram cartões empilhados.
 - Texto cortado nas opções do seletor do simulador de clube.

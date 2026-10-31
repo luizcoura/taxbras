@@ -14,7 +14,7 @@ Orientações para agentes de IA (e pessoas) que trabalham neste repositório.
 
 | Arquivo | Função |
 |---|---|
-| `index.html` | Página principal: texto, calendário e 5 simuladores em abas (consumidor, MEI, Simples Nacional, clube, Pix), com script inline no fim. O `<head>` tem a tag `google-site-verification` do Search Console: não remova |
+| `index.html` | Página principal: texto, calendário e 4 simuladores em abas (consumidor, MEI, Simples Nacional, Pix), com script inline no fim. O `<head>` tem a tag `google-site-verification` do Search Console: não remova |
 | `perguntas.html` | Perguntas frequentes, com respostas curtas e links para a página principal |
 | `style.css` | CSS único das duas páginas (tokens de cor, modo escuro, recibo, tabelas, abas, FAQ) |
 | `og-image.png` | Imagem de pré-visualização 1200×630 |
@@ -31,7 +31,7 @@ Fontes novas vão na lista "Fontes consultadas" no rodapé do `index.html`. Text
 - **Idioma:** todo texto do site, commits e documentação em português do Brasil.
 - **Público:** leigo. Frases curtas, sem jargão sem explicação. Termos técnicos entram no glossário.
 - **Conteúdo tributário:** só afirme o que tem fonte (Planalto, Receita Federal, Ministério da Fazenda, Agência Senado). Quando depender de regulamentação, diga isso no texto em vez de afirmar. Os simuladores são estimativas didáticas, não cálculo oficial.
-- **Pontos pouco confirmados** (manter com ressalva): parcela de CBS e IBS dentro da guia do Simples e alíquota efetiva (valores de exemplo na aba Simples), prazos da opção pelo Simples híbrido (setembro de 2026 com cancelamento até 30/11, segundo a Fazenda; nova janela em abril, segundo a Receita; confira se houver prorrogação), associações e Simples ("em regra"), PIS/Cofins sobre mensalidade ("em geral"), redução de 30% para profissionais, percentuais do cashback, lista de remédios com alíquota zero.
+- **Pontos pouco confirmados** (manter com ressalva): parcela de CBS e IBS dentro da guia do Simples e alíquota efetiva (valores de exemplo na aba Simples), prazos da opção pelo Simples híbrido (Resolução CGSN 194, notícia da Fazenda de 29/09/2026: Simples até 15/10, regime regular até 30/10, cancelamento de 03/11 a 20/12/2026; nova janela em abril, segundo a página Reforma de Fato da Receita, ainda sem norma conferida), associações e Simples ("em regra"), PIS/Cofins sobre mensalidade ("em geral"), redução de 30% para profissionais, percentuais do cashback, lista de remédios com alíquota zero.
 - **Data de conferência:** sempre que mudar ou revisar o conteúdo, atualize "Conteúdo conferido em ..." no rodapé do `index.html` e o `lastmod` da página alterada no `sitemap.xml`.
 - **Alíquota:** cálculo "por fora". O imposto embutido no preço é `preço × r / (1 + r)`. Nos simuladores a alíquota tem dois campos, CBS 11,3% (proposta do TCU de 28/10/2026 para 2027, sujeita ao Senado até 15/12) e IBS 18,7% (projeção), somando cerca de 30%; 26,5% é a referência legal (acima disso, o governo deve propor redução ao Congresso, sem trava automática) e a estimativa antiga do governo era CBS 8,8% + IBS 17,7%. Atualize quando o Senado decidir. O cálculo usa a soma e divide o resultado entre CBS e IBS na proporção das alíquotas.
 - **MEI 2026:** DAS de R$ 82,05 (comércio/indústria), R$ 86,05 (serviços) e R$ 87,05 (comércio e serviços), limite de R$ 81 mil (o PLP 186/2026, sancionado em 21/10/2026, eleva para R$ 110 mil em 2027 e R$ 140 mil em 2028). Atualize se o salário mínimo mudar.
