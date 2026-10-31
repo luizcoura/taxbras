@@ -344,13 +344,14 @@
             <small>Os descontos seguem a LC 214/2025. A lista exata de itens de cada categoria está nos anexos da lei.</small></div>
         </div>
         <div class="resultado" aria-live="polite">
-          <div class="linha"><span>Alíquota efetiva</span><span id="c-aliq"></span></div>
+          <div class="linha"><span>Alíquota sobre o preço sem imposto</span><span id="c-aliq"></span></div>
           <div class="linha"><span>Preço sem imposto</span><span id="c-base"></span></div>
           <div class="linha total"><span>Imposto no preço</span><span id="c-imp"></span></div>
           <div class="linha"><span>Desse total, CBS</span><span id="c-cbs"></span></div>
           <div class="linha"><span>Desse total, IBS</span><span id="c-ibs"></span></div>
+          <div class="linha"><span>Imposto como parte do que você paga</span><span id="c-share"></span></div>
           <div class="fatia" aria-hidden="true"><i id="c-f1" style="background:var(--carimbo)"></i></div>
-          <div id="c-pct"></div>
+          <p class="msg" id="c-conta"></p>
           <p class="msg" id="c-msg"></p>
         </div>
       </div>
@@ -581,7 +582,8 @@
     var pt=partes(imp);$('c-cbs').textContent=brl.format(pt[0]);$('c-ibs').textContent=brl.format(pt[1]);
     var share=p>0?imp/p*100:0;
     $('c-f1').style.width=share+'%';
-    $('c-pct').textContent=pct.format(share)+'% do preço é imposto de CBS e IBS';
+    $('c-share').textContent=pct.format(share)+'%';
+    $('c-conta').textContent='Como a conta é feita: a alíquota de '+pct.format(re*100)+'% incide sobre o preço sem imposto. '+brl.format(p-imp)+' + '+brl.format(imp)+' de imposto = '+brl.format(p)+', o que você paga. Fórmula: imposto = preço na etiqueta × alíquota ÷ (1 + alíquota).';
     $('c-msg').textContent=c.red===1?'Esse item tem alíquota zero. Na reforma, a cesta básica nacional não paga CBS nem IBS.'
       :c.red>0?'A lei dá um desconto de '+(c.red*100)+'% na alíquota cheia para esta categoria.'
       :'Essa categoria paga a alíquota cheia. Se o item tiver Imposto Seletivo, ele vem somado a este valor.';

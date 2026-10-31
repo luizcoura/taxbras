@@ -15,6 +15,7 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 - Publicação no GitHub Pages: https://luizcoura.github.io/reset-tributario/
 
 ### Alterado
+- Simulador do consumidor: a linha "Alíquota efetiva" virou "Alíquota sobre o preço sem imposto", ganhou a linha "Imposto como parte do que você paga" e uma explicação da conta com a fórmula `preço × alíquota ÷ (1 + alíquota)`, para não parecer que 30% de R$ 100 deveria dar R$ 30.
 - Alíquotas atualizadas com a proposta do TCU de 28/10/2026: CBS de 11,3% para 2027 (depende do Senado, prazo de 15/12) e IBS projetado em 18,7%, soma próxima de 30%. Padrões dos simuladores mudaram de 8,8% / 17,7% para 11,3% / 18,7%. Textos da página principal e da pergunta "Tudo vai ficar mais caro?" reescritos; fontes adicionadas.
 - Simuladores: a alíquota de referência foi separada em dois campos, CBS (padrão 8,8%) e IBS (padrão 17,7%), com a soma exibida. Zerar um deles testa o outro sozinho. Os resultados do consumidor e do Pix mostram quanto do imposto é CBS e quanto é IBS.
 - Projeto renomeado de `taxbras` para **RESET tributário** (Reforma Explicada Sem Enrolação Tributária); repositório `reset-tributario`.
