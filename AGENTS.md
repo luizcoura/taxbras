@@ -48,7 +48,7 @@ Fontes novas vão na lista "Fontes consultadas" no rodapé do `index.html`. Text
 1. Nova página: adicione ao `sitemap.xml`, ao menu e ao rodapé; use canonical, Open Graph e JSON-LD como as existentes.
 2. Mudou título ou texto principal: regenere o `og-image.png` (HTML renderizado no Chrome headless, redimensionado com `sips`).
 3. Teste em tela larga e em 390px, nos modos claro e escuro, e navegue pelas abas com o teclado. Dicas: o escuro vem de `prefers-color-scheme`, então para ver o claro ponha `data-theme="light"` no `<html>`; para 390px use um iframe de 390px de largura (a janela do Chrome não passa de 500px); para conferir o site publicado, abra com `?v=<hash do commit>` para fugir do cache.
-4. Registre no `CHANGELOG.md`.
+4. Registre no `CHANGELOG.md` com uma nova versão e atualize a linha "Versão X.Y.Z" no rodapé do `index.html` e do `perguntas.html`. A regra da numeração está no topo do `CHANGELOG.md`.
 5. Commit em português, no imperativo, com mensagem curta (ex.: "Adiciona página de perguntas frequentes"). O push publica o site; espere o build do Pages antes de conferir.
 
 ## Fora do escopo

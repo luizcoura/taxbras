@@ -1,10 +1,15 @@
 # Changelog
 
-Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). O site não tem versões numeradas; as entradas são por data.
+Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). O site tem versão, mostrada no rodapé das duas páginas. Regra: a primeira parte muda numa reestruturação grande; a segunda, em recurso novo ou revisão de conteúdo; a terceira, em correção pontual. A 1.0.0 reúne tudo o que foi feito antes de a numeração existir.
 
-## 2026-10-30
+## 1.3.0 · 2026-10-30
 
-### Corrigido (conteúdo tributário, revisão independente)
+### Adicionado
+- Versão do site no rodapé do `index.html` e do `perguntas.html`, com link para este histórico de mudanças.
+
+## 1.2.0 · 2026-10-30 · conteúdo tributário
+
+### Corrigido (revisão independente, com fontes oficiais)
 - MEI: o PLP 186/2026 foi sancionado em 21/10/2026 (R$ 110 mil em 2027 e R$ 140 mil em 2028); o texto dizia que nenhum projeto estava aprovado. Removida a menção ao PLP 108/2021, sem fonte. Fonte: Ministério do Empreendedorismo e Portal do Empreendedor.
 - MEI: o crédito do cliente não cita mais o art. 47, § 9º da LC 214 (esse parágrafo trata de combustíveis). Agora segue a Receita: o MEI não sofre incidência de IBS e CBS sobre as vendas, então o cliente tende a ter pouco ou nenhum crédito.
 - Simples híbrido: prazos trocados pelos oficiais (janela de 1 a 30/09/2026 e cancelamento até 30/11/2026, segundo a Fazenda; Simples encerrou em 15/10 e regime regular do IBS/CBS vai até 30/10/2026, segundo a Receita; nova janela em abril, segundo a Receita). Saiu o prazo de 20/12 e a janela de março, que vinham da Fenacon.
@@ -15,7 +20,9 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 - Notas fiscais: explicado que o Simples tem calendário próprio (emissor nacional em 01/11/2026; CBS e IBS na nota a partir de 01/01/2027).
 - Novas fontes oficiais no rodapé.
 
-### Corrigido (revisão técnica)
+## 1.1.0 · 2026-10-30 · revisão técnica
+
+### Corrigido
 - Simuladores: CBS e IBS exibidos agora somam exatamente o imposto total (o centavo que sobra vai para o IBS); no Simples, o total da opção 2 também fecha com as parcelas.
 - Simuladores: campos numéricos respeitam o `max` do HTML mesmo quando o valor é digitado (percentual de vendas para empresas e alíquotas) e limitam valores absurdos, que antes viravam infinito ou NaN.
 - Modo escuro: texto em destaque do bloco de exemplo e etiqueta "estamos aqui" com contraste adequado (antes cerca de 1,2:1 e 3,1:1).
@@ -23,6 +30,8 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 - Recibo (calendário): 2027 e 2033 não dizem mais que "acabam" todos os tributos antigos; citam a exceção do IPI na Zona Franca e a permanência do Imposto Seletivo.
 - Simulador do MEI: a mensagem de excesso de faturamento agora diz que o MEI deixa de ser MEI em janeiro do ano seguinte.
 - `AGENTS.md`: rótulos do DAS do MEI corrigidos (R$ 86,05 é serviços; R$ 87,05 é comércio e serviços).
+
+## 1.0.0 · 2026-10-30 · lançamento
 
 ### Adicionado
 - Aba "Simples Nacional" nos simuladores: compara deixar CBS e IBS dentro da guia (crédito do cliente limitado ao que foi pago no DAS) com recolhê-los por fora (Simples híbrido, crédito cheio). Fontes: Fenacon e Contábeis.
