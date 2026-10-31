@@ -14,7 +14,7 @@ Orientações para agentes de IA (e pessoas) que trabalham neste repositório.
 
 | Arquivo | Função |
 |---|---|
-| `index.html` | Página principal: texto, calendário, simuladores (script inline no fim) |
+| `index.html` | Página principal: texto, calendário e 5 simuladores em abas (consumidor, MEI, Simples Nacional, clube, Pix), com script inline no fim. O `<head>` tem a tag `google-site-verification` do Search Console: não remova |
 | `perguntas.html` | Perguntas frequentes, com respostas curtas e links para a página principal |
 | `style.css` | CSS único das duas páginas (tokens de cor, modo escuro, recibo, tabelas, abas, FAQ) |
 | `og-image.png` | Imagem de pré-visualização 1200×630 |
@@ -23,6 +23,8 @@ Orientações para agentes de IA (e pessoas) que trabalham neste repositório.
 | `CHANGELOG.md` | Histórico de mudanças |
 
 Não há build, dependências nem framework. Para ver localmente, abra `index.html` no navegador.
+
+Fontes novas vão na lista "Fontes consultadas" no rodapé do `index.html`. Texto com número ou regra nova linka a fonte no próprio parágrafo.
 
 ## Regras
 
@@ -45,7 +47,7 @@ Não há build, dependências nem framework. Para ver localmente, abra `index.ht
 
 1. Nova página: adicione ao `sitemap.xml`, ao menu e ao rodapé; use canonical, Open Graph e JSON-LD como as existentes.
 2. Mudou título ou texto principal: regenere o `og-image.png` (HTML renderizado no Chrome headless, redimensionado com `sips`).
-3. Teste em tela larga e em 390px, nos modos claro e escuro, e navegue pelas abas com o teclado.
+3. Teste em tela larga e em 390px, nos modos claro e escuro, e navegue pelas abas com o teclado. Dicas: o escuro vem de `prefers-color-scheme`, então para ver o claro ponha `data-theme="light"` no `<html>`; para 390px use um iframe de 390px de largura (a janela do Chrome não passa de 500px); para conferir o site publicado, abra com `?v=<hash do commit>` para fugir do cache.
 4. Registre no `CHANGELOG.md`.
 5. Commit em português, no imperativo, com mensagem curta (ex.: "Adiciona página de perguntas frequentes"). O push publica o site; espere o build do Pages antes de conferir.
 
