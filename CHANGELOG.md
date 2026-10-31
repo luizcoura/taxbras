@@ -2,6 +2,21 @@
 
 Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). O site tem versão, mostrada no rodapé das duas páginas. Regra: a primeira parte muda numa reestruturação grande; a segunda, em recurso novo ou revisão de conteúdo; a terceira, em correção pontual. A 1.0.0 reúne tudo o que foi feito antes de a numeração existir.
 
+## 1.8.0 · 2026-10-31 · quinta revisão independente
+
+### Corrigido
+- Simples: a mensagem agora mostra primeiro a conta (opção 2 custa menos, mais ou o mesmo; crédito maior, menor ou igual, "se a compra der direito a ele") e só depois comenta quem vende para pessoas. Saiu "a opção 1 costuma bastar", que ignorava a conta (por exemplo, com compras maiores que vendas).
+- Crédito igual nas duas opções e custo igual deixaram de aparecer como "menor" e "R$ 0,00 a mais".
+- MEI com CBS e IBS zerados avisa que não há crédito para comparar, em vez de sugerir que o cliente prefira quem dê "mais crédito".
+- `abbr` de ICMS, ISS, PIS e Cofins voltaram à primeira aparição na FAQ (a passada anterior os tinha desfeito); PLP expandido no `index.html`; CNPJ explicado na mensagem do MEI.
+- Alimentos fora da cesta: a FAQ agora diz "que estejam na lista da lei". Profissional liberal: a nota dos simuladores informa que o desconto de 30% exige também habilitação e, para sociedades, requisitos próprios (art. 127).
+- Sair do MEI: "um caminho possível é virar microempresa do Simples", sem dizer que é o único.
+- Prazo de 30/10 do regime regular aparece como "já encerrado"; rodapé diz fontes conferidas em 31/10; CNN com a atualização de 29/10.
+- A frase do Senado agora diz que ele decide a CBS de 2027, e não os 30% juntos; o texto sobre a e-Financeira avisa que o ato que fixa os limites não foi conferido.
+
+### Alterado
+- Legibilidade: transição ICMS/ISS para IBS (2029 a 2032) em tabela; limite do MEI por ano em lista; e-Financeira em dois blocos ("quem informa", "o que informam"); rótulo do MEI curto com a ressalva em nota abaixo; mensalidade do clube e calendário das notas fiscais na FAQ em listas.
+
 ## 1.7.0 · 2026-10-31 · quarta revisão independente
 
 ### Corrigido
