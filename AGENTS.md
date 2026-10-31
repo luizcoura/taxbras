@@ -31,7 +31,7 @@ Não há build, dependências nem framework. Para ver localmente, abra `index.ht
 - **Conteúdo tributário:** só afirme o que tem fonte (Planalto, Receita Federal, Ministério da Fazenda, Agência Senado). Quando depender de regulamentação, diga isso no texto em vez de afirmar. Os simuladores são estimativas didáticas, não cálculo oficial.
 - **Pontos pouco confirmados** (manter com ressalva): associações e Simples ("em regra"), PIS/Cofins sobre mensalidade ("em geral"), redução de 30% para profissionais, percentuais do cashback, lista de remédios com alíquota zero.
 - **Data de conferência:** sempre que mudar ou revisar o conteúdo, atualize "Conteúdo conferido em ..." no rodapé do `index.html` e o `lastmod` da página alterada no `sitemap.xml`.
-- **Alíquota:** cálculo "por fora". O imposto embutido no preço é `preço × r / (1 + r)`. Nos simuladores a alíquota tem dois campos, CBS 8,8% e IBS 17,7%, somando 26,5% (teto legal). O cálculo usa a soma e divide o resultado entre CBS e IBS na proporção das alíquotas.
+- **Alíquota:** cálculo "por fora". O imposto embutido no preço é `preço × r / (1 + r)`. Nos simuladores a alíquota tem dois campos, CBS 11,3% (proposta do TCU de 28/10/2026 para 2027, sujeita ao Senado até 15/12) e IBS 18,7% (projeção), somando cerca de 30%; o teto legal é 26,5% e a estimativa antiga do governo era CBS 8,8% + IBS 17,7%. Atualize quando o Senado decidir. O cálculo usa a soma e divide o resultado entre CBS e IBS na proporção das alíquotas.
 - **MEI 2026:** DAS de R$ 82,05 (comércio/indústria), R$ 86,05 (transporte) e R$ 87,05 (serviços), limite de R$ 81 mil. Atualize se o salário mínimo mudar.
 
 ## Estilo e CSS
