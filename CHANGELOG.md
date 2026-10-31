@@ -15,6 +15,7 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 - Publicação no GitHub Pages: https://luizcoura.github.io/reset-tributario/
 
 ### Alterado
+- Simuladores: a alíquota de referência foi separada em dois campos, CBS (padrão 8,8%) e IBS (padrão 17,7%), com a soma exibida. Zerar um deles testa o outro sozinho. Os resultados do consumidor e do Pix mostram quanto do imposto é CBS e quanto é IBS.
 - Projeto renomeado de `taxbras` para **RESET tributário** (Reforma Explicada Sem Enrolação Tributária); repositório `reset-tributario`.
 - CSS extraído do `index.html` para `style.css`, compartilhado pelas duas páginas.
 

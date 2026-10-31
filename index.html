@@ -318,9 +318,12 @@
     </div>
 
     <div class="global">
-      <label for="ref"><strong>Alíquota de referência (CBS + IBS):</strong></label>
-      <span><input type="number" id="ref" value="26.5" min="0" max="60" step="0.5"> %</span>
-      <small>Os cálculos usam a alíquota cheia, como será em 2033. Entre 2027 e 2032, a conta é uma mistura com os impostos antigos. 26,5% é o teto previsto na lei e a estimativa oficial. Outras estimativas chegam a 28%, e o número final ainda será definido.</small>
+      <label for="ref-cbs"><strong>CBS (federal):</strong></label>
+      <span><input type="number" id="ref-cbs" value="8.8" min="0" max="60" step="0.1"> %</span>
+      <label for="ref-ibs"><strong>IBS (estados e municípios):</strong></label>
+      <span><input type="number" id="ref-ibs" value="17.7" min="0" max="60" step="0.1"> %</span>
+      <span>Soma: <strong id="ref-total"></strong></span>
+      <small>Para testar um imposto sozinho, zere o outro. Os cálculos usam a alíquota cheia, como será em 2033. Entre 2027 e 2032, a conta é uma mistura com os impostos antigos: a CBS entra inteira em 2027 e o IBS sobe aos poucos, de 2029 a 2033. A soma de 26,5% (CBS 8,8% e IBS 17,7%) é o teto previsto na lei e a estimativa oficial. Outras estimativas chegam a 28%, e o número final ainda será definido.</small>
     </div>
 
     <div class="abas" role="tablist" aria-label="Simuladores">
@@ -343,6 +346,8 @@
           <div class="linha"><span>Alíquota efetiva</span><span id="c-aliq"></span></div>
           <div class="linha"><span>Preço sem imposto</span><span id="c-base"></span></div>
           <div class="linha total"><span>Imposto no preço</span><span id="c-imp"></span></div>
+          <div class="linha"><span>Desse total, CBS</span><span id="c-cbs"></span></div>
+          <div class="linha"><span>Desse total, IBS</span><span id="c-ibs"></span></div>
           <div class="fatia" aria-hidden="true"><i id="c-f1" style="background:var(--carimbo)"></i></div>
           <div id="c-pct"></div>
           <p class="msg" id="c-msg"></p>
@@ -412,6 +417,8 @@
           <div class="linha"><span>Você paga</span><span id="x-paga"></span></div>
           <div class="linha"><span>Imposto sobre o Pix em si</span><span class="bom">R$ 0,00</span></div>
           <div class="linha"><span>Imposto da compra (CBS e IBS)</span><span id="x-imp"></span></div>
+          <div class="linha"><span>Desse total, CBS</span><span id="x-cbs"></span></div>
+          <div class="linha"><span>Desse total, IBS</span><span id="x-ibs"></span></div>
           <div class="linha"><span>Hoje: a loja recebe</span><span id="x-hoje"></span></div>
           <div class="linha total"><span>Com split payment: a loja recebe</span><span id="x-loja"></span></div>
           <p class="msg" id="x-msg"></p>
@@ -539,7 +546,11 @@
   var brl=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
   var pct=new Intl.NumberFormat('pt-BR',{maximumFractionDigits:1});
   function n(id){var v=parseFloat($(id).value);return isFinite(v)&&v>0?v:0}
-  function ref(){return n('ref')/100}
+  function refC(){return n('ref-cbs')/100}
+  function refI(){return n('ref-ibs')/100}
+  function ref(){return refC()+refI()}
+  // divide um imposto total entre CBS e IBS, na proporção das alíquotas
+  function partes(imp){var t=ref();return t>0?[imp*refC()/t,imp*refI()/t]:[0,0]}
   // parcela de imposto dentro de um valor cobrado, com alíquota calculada "por fora"
   function dentro(valor,r){return valor*r/(1+r)}
 
@@ -562,6 +573,7 @@
     $('c-aliq').textContent=pct.format(re*100)+'%';
     $('c-base').textContent=brl.format(p-imp);
     $('c-imp').textContent=brl.format(imp);
+    var pt=partes(imp);$('c-cbs').textContent=brl.format(pt[0]);$('c-ibs').textContent=brl.format(pt[1]);
     var share=p>0?imp/p*100:0;
     $('c-f1').style.width=share+'%';
     $('c-pct').textContent=pct.format(share)+'% do preço é imposto de CBS e IBS';
@@ -614,13 +626,14 @@
     var r=ref(),c=cats[+$('x-cat').value],re=r*(1-c.red),v=n('x-val'),imp=dentro(v,re);
     $('x-paga').textContent=brl.format(v);
     $('x-imp').textContent=brl.format(imp);
+    var px=partes(imp);$('x-cbs').textContent=brl.format(px[0]);$('x-ibs').textContent=brl.format(px[1]);
     $('x-hoje').textContent=brl.format(v)+' (o imposto é pago depois)';
     $('x-loja').textContent=brl.format(v-imp);
     $('x-msg').textContent='O mesmo cálculo vale para '+$('x-meio').value+'. Para você, que paga, o valor e a forma de pagamento são iguais. A diferença está na loja: o imposto é separado na hora e vai direto ao governo. Versão simplificada: na prática, os créditos das compras da loja também entram na conta.';
   }
 
   var fns={consumidor:consumidor,mei:mei,clube:clube,pix:pix};
-  function tudo(){consumidor();mei();clube();pix()}
+  function tudo(){$('ref-total').textContent=pct.format(ref()*100)+'%';consumidor();mei();clube();pix()}
   document.querySelectorAll('#simuladores input,#simuladores select').forEach(function(el){
     el.addEventListener('input',tudo);
   });
