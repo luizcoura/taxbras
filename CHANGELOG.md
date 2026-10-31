@@ -2,6 +2,25 @@
 
 Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). O site tem versão, mostrada no rodapé das duas páginas. Regra: a primeira parte muda numa reestruturação grande; a segunda, em recurso novo ou revisão de conteúdo; a terceira, em correção pontual. A 1.0.0 reúne tudo o que foi feito antes de a numeração existir.
 
+## 1.6.0 · 2026-10-30 · terceira revisão independente
+
+### Corrigido
+- MEI que abriu no ano: a mensagem de excesso de faturamento agora mostra o valor do excesso e só o cenário calculado; acima de 20%, a saída vale desde a abertura do CNPJ (se abriu neste ano) ou desde janeiro. Mesma correção na pergunta da FAQ.
+- "Na média, a taxa fica perto de 30%" virou "para uma compra sem desconto, o cenário é perto de 30%, ainda sem definição final": é um cenário, não uma média dos consumidores.
+- Nota dos simuladores: não diz mais que os resultados são "como seria em 2033"; diz que são um cenário hipotético e que o quadro do MEI usa os valores de 2026.
+- Simples com CBS e IBS zerados: os resultados da comparação aparecem como "indisponível", e a mensagem pede "pelo menos uma taxa maior que zero".
+- Crédito: "crédito cheio" virou "pode dar crédito maior à empresa cliente que tenha direito a aproveitá-lo"; o verbete diz "quando a compra dá direito a crédito".
+- Glossário: "não cumulatividade" e "por fora/por dentro" reescritos com exemplo; saiu "mais de 170 países", sem fonte.
+- Split payment: o texto não diz mais que o vendedor "não precisa mais pagar a guia"; a empresa ainda apura seus tributos.
+- Cashback: Cadastro Único não é mais apresentado como condição suficiente; "nada muda no bolso" da Maria virou "a guia de Maria não muda".
+- Gráfico do calendário: aviso de que ele mostra o IPI zerado e não inclui o Imposto Seletivo nem o IPI residual.
+- Aviso de mês fracionado diz que os meses são inteiros (antes dizia "fora do limite").
+- Rodapé: a ordem das fontes é pela data de publicação visível; a Fazenda (CGSN 194) mostra a atualização de 26/10/2026 e o IBET cita os metadados.
+
+### Alterado
+- Siglas explicadas na primeira aparição em cada página (PIS, Cofins, ICMS, ISS, IPI, INSS, DAS, DAS-MEI, CSLL; na FAQ também CBS, IBS, Anvisa e PLP), com `abbr`.
+- Legibilidade: parágrafo da alíquota em duas estimativas em lista; mensalidade do clube em três condições; FAQ de preços sem repetir o bloco técnico; Imposto de Renda em lista de três itens; rótulos do MEI e do Simples mais curtos ("Quanto da sua guia corresponde a CBS e IBS?").
+
 ## 1.5.0 · 2026-10-30 · linguagem para leigo
 
 ### Alterado
