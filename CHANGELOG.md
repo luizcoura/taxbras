@@ -7,7 +7,7 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 ### Adicionado
 - Página principal (`index.html`) explicando a reforma tributária (CBS, IBS, Imposto Seletivo): como é hoje, o que muda, calendário 2026–2033, MEI, Pix, clubes e associações, Imposto de Renda e glossário.
 - Simuladores em abas: consumidor, MEI, clube e Pix.
-- Página de perguntas frequentes (`perguntas.html`) com 16 perguntas em 5 grupos, cada uma com endereço próprio (`#pix-taxado`, `#mei-acaba` etc.).
+- Página de perguntas frequentes (`perguntas.html`) com 18 perguntas em 5 grupos, cada uma com endereço próprio (`#pix-taxado`, `#mei-acaba` etc.).
 - Licença MIT, com aviso de autoria no rodapé do site.
 - SEO: meta tags, URL canônica, Open Graph, Twitter Card, JSON-LD, `robots.txt` e `sitemap.xml`.
 - Imagem de pré-visualização `og-image.png` (1200×630).
