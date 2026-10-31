@@ -2,6 +2,28 @@
 
 Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). O site tem versão, mostrada no rodapé das duas páginas. Regra: a primeira parte muda numa reestruturação grande; a segunda, em recurso novo ou revisão de conteúdo; a terceira, em correção pontual. A 1.0.0 reúne tudo o que foi feito antes de a numeração existir.
 
+## 1.5.0 · 2026-10-30 · linguagem para leigo
+
+### Alterado
+- Revisão de linguagem clara feita por um agente independente (nota 5/10 para leigo) e aplicada: a conclusão vem antes da lei, da data e da fonte; frases mais curtas; menos números por parágrafo.
+- Parágrafo "Vai ficar mais caro?" refeito: resposta primeiro (taxa perto de 30% sobre o preço sem imposto, cerca de 23% do que se paga), depois de onde vem o número. O prazo de 15/12 do Senado agora diz "segundo a imprensa".
+- Aba Simples: abertura explica as duas opções com palavras simples; prazos separados em um bloco "Até quando dá para escolher"; rótulos dos campos viraram perguntas com exemplo.
+- Simulador do consumidor: o resultado abre com o imposto dentro do preço, e a conta com a fórmula fica num bloco "Ver a conta".
+- Rótulos e mensagens do simulador do MEI mais curtos; mensagem de passar do limite explica "desenquadrar".
+- Um nome por conceito: "regime regular" no lugar de "regime normal", "empresa cliente" no lugar de "PJ", "taxa" ao lado de "alíquota".
+- Mensalidade do clube e imunidade explicadas sem artigo de lei no meio (a base legal fica no fim).
+- Respostas da FAQ sobre alíquota, limite do MEI, clubes, nota fiscal e Imposto de Renda reescritas na mesma linha.
+- Siglas CBS, IBS e TCU explicadas na primeira aparição (`abbr`) e aviso para o glossário no resumo.
+
+### Corrigido
+- IPI: o texto dizia "exceto para a Zona Franca", o que sugeria cobrança só lá. Agora diz que o IPI continua em alguns produtos que concorrem com os da Zona Franca de Manaus (fontes secundárias; a regulamentação não abriu).
+- Pix: os limites de R$ 5 mil e R$ 15 mil agora dizem "quando passa de" e linkam a nota da Fazenda (publicada em 07/01/2025, atualizada em 27/10/2026). Saiu a frase sobre lavagem de dinheiro, que a nota não traz.
+- Entrada do `CHANGELOG` da 1.2.0 sobre o art. 47, § 9º corrigida: ele trata do crédito de quem compra de empresa do Simples Nacional.
+
+### Adicionado
+- Glossário de 8 para 20 verbetes: CBS e IBS, Imposto Seletivo, PIS/Cofins/ICMS/ISS/IPI, crédito, regime regular, imposto "por fora", desenquadramento, imunidade/isenção/alíquota zero, contrapartida, CadÚnico, janela de opção e siglas de órgãos.
+- Regra "Escrita para leigo" no `AGENTS.md`.
+
 ## 1.4.0 · 2026-10-30 · fontes datadas, simuladores e correções da segunda revisão
 
 ### Adicionado
@@ -36,7 +58,7 @@ Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](
 
 ### Corrigido (revisão independente, com fontes oficiais)
 - MEI: o PLP 186/2026 foi sancionado em 21/10/2026 (R$ 110 mil em 2027 e R$ 140 mil em 2028); o texto dizia que nenhum projeto estava aprovado. Removida a menção ao PLP 108/2021, sem fonte. Fonte: Ministério do Empreendedorismo e Portal do Empreendedor.
-- MEI: o crédito do cliente não cita mais o art. 47, § 9º da LC 214 como regra do MEI (a revisão independente informa que esse parágrafo trata do Simples Nacional; esta entrada dizia, por engano, que tratava de combustíveis, e o texto do artigo não foi reconferido). Agora segue a Receita: o MEI não sofre incidência de IBS e CBS sobre as vendas, então o cliente tende a ter pouco ou nenhum crédito.
+- MEI: o crédito do cliente não cita mais o art. 47, § 9º da LC 214 como regra do MEI (esse parágrafo trata do crédito de quem compra de empresa do Simples Nacional, como confirmam fontes secundárias; esta entrada dizia, por engano, que tratava de combustíveis). Agora segue a Receita: o MEI não sofre incidência de IBS e CBS sobre as vendas, então o cliente tende a ter pouco ou nenhum crédito.
 - Simples híbrido: prazos trocados por fontes oficiais. ATENÇÃO: o cancelamento até 30/11/2026 estava errado e foi corrigido na 1.4.0.
 - 26,5% deixou de ser tratado como teto: é referência da LC 214 (art. 475); se a estimativa passar disso, o governo deve enviar ao Congresso projeto para reduzir a carga. Texto do site e do `AGENTS.md` ajustados.
 - Associações: Imposto de Renda e CSLL "em regra" não incidem se cumprirem os requisitos da isenção; rendimentos financeiros costumam ser tributados.

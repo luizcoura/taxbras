@@ -195,3 +195,4 @@ input[type=number],select{font:inherit;font-size:1rem;width:100%;padding:.5rem .
 .mt-15{margin-top:1.5rem}
 .mt-2{margin-top:2rem}
 footer h3{font-size:1.05rem;margin:1.2rem 0 .3rem}
+.resultado ul.lista-msg{font-family:var(--corpo);font-size:1rem;line-height:1.5;margin:.3rem 0 .6rem;padding-left:1.2rem}
