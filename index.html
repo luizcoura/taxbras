@@ -373,7 +373,11 @@
           <div class="linha"><span>Faturamento no ano</span><span id="m-anual"></span></div>
           <div class="linha"><span>Situação no limite de R$ 81 mil</span><span id="m-lim"></span></div>
           <div class="linha"><span>Se saísse da guia fixa (deixando de ser MEI): CBS e IBS por mês (estimativa)</span><span id="m-normal"></span></div>
+          <div class="linha"><span>Desse total, CBS</span><span id="m-ncbs"></span></div>
+          <div class="linha"><span>Desse total, IBS</span><span id="m-nibs"></span></div>
           <div class="linha"><span>Crédito do cliente empresa com você, no regime normal (por mês)</span><span id="m-cred"></span></div>
+          <div class="linha"><span>Desse crédito, CBS</span><span id="m-ccbs"></span></div>
+          <div class="linha"><span>Desse crédito, IBS</span><span id="m-cibs"></span></div>
           <div class="linha"><span>Crédito do cliente empresa com você, na guia fixa</span><span>bem menor</span></div>
           <p class="msg" id="m-msg"></p>
         </div>
@@ -602,7 +606,10 @@
     var comp=n('m-comp'),pj=n('m-pj')/100;
     var normal=Math.max(0,dentro(fat,r)-dentro(comp,r));
     $('m-normal').textContent=brl.format(normal);
-    $('m-cred').textContent=brl.format(dentro(fat*pj,r));
+    var cred=dentro(fat*pj,r),pn=partes(normal),pc=partes(cred);
+    $('m-cred').textContent=brl.format(cred);
+    $('m-ncbs').textContent=brl.format(pn[0]);$('m-nibs').textContent=brl.format(pn[1]);
+    $('m-ccbs').textContent=brl.format(pc[0]);$('m-cibs').textContent=brl.format(pc[1]);
     var msg;
     if(anual>81000)msg='Esse faturamento passa do limite do MEI. Se a diferença for de até 20%, o MEI paga um complemento e segue; acima disso, o desenquadramento vale desde o início do ano. Fale com um contador.';
     else if(pj<.3)msg='Como a maior parte das suas vendas é para pessoas, o crédito do cliente empresa pesa pouco. Na maioria dos casos, vale ficar na guia fixa.';
