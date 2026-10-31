@@ -2,6 +2,23 @@
 
 Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). O site tem versão, mostrada no rodapé das duas páginas. Regra: a primeira parte muda numa reestruturação grande; a segunda, em recurso novo ou revisão de conteúdo; a terceira, em correção pontual. A 1.0.0 reúne tudo o que foi feito antes de a numeração existir.
 
+## 1.7.0 · 2026-10-31 · quarta revisão independente
+
+### Corrigido
+- Simples: a mensagem agora compara o crédito dos dois lados. Com CBS 0,1% e IBS zero, ela diz que a opção 2 dá crédito menor (R$ 15,98 contra R$ 384,00), em vez de "crédito maior".
+- Aviso dos meses de atividade: valores fora de 1 a 12 (0,6 e 12,4 inclusive) dizem "fora do limite"; só fração dentro do intervalo diz "meses inteiros".
+- CBS: a expansão passou a ser "Contribuição *Social* sobre Bens e Serviços", como na LC 214 (abbr e glossário).
+- "Crédito cheio" e "guia maior" saíram dos textos do MEI e da FAQ: o contador compara custos e créditos. "O preço não muda" virou "o preço depende da loja e dos impostos do produto".
+- "Ficar no Simples: até 15/10" virou "pedir entrada ou retorno ao Simples", para quem já está no Simples não achar que precisa renovar.
+- Mensagens do MEI e do Simples para quem vende pouco para empresas não recomendam mais "ficar na guia fixa" só pelo corte de 30%.
+- Categorias dos simuladores dizem "se estiver na lista da lei" (alimento), "serviços previstos em lei" (educação) e "profissões previstas em lei"; a nota avisa que o desconto vale só para o que a lei prevê.
+- FAQ: "para as empresas comuns" na frase do calendário de 2026.
+- Fontes do rodapé: a notícia da Fenacon sobre o DAS (que usava R$ 1.627 antes do decreto) saiu, e entrou a notícia da Receita de 02/01/2026 (salário mínimo de R$ 1.621, Decreto 12.797/2025, que sustenta o DAS de R$ 82,05, R$ 86,05 e R$ 87,05). Mattos Filho com as datas visíveis (01/12/2025 e 17/01/2025), lista reordenada, e avisos nas fontes Contábeis (prazos superados) e Simtax (chama o 26,5% de teto).
+
+### Alterado
+- Siglas explicadas na primeira aparição: MEI no lead, IPI na nota do gráfico, CGSN, e na FAQ MEI, CBS, IBS, INSS, DAS-MEI, PLP, LC e CNPJ.
+- Legibilidade: nota dos simuladores em três notas curtas; abertura do Simples em duas opções; mensalidade do clube em quatro condições com a base legal em nota pequena; mensagens de excesso do MEI mais curtas; FAQ do limite e da guia do MEI em listas.
+
 ## 1.6.0 · 2026-10-30 · terceira revisão independente
 
 ### Corrigido
