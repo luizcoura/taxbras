@@ -330,6 +330,7 @@
     <div class="abas" role="tablist" aria-label="Simuladores">
       <button role="tab" id="tab-consumidor" aria-controls="p-consumidor" aria-selected="true">Consumidor</button>
       <button role="tab" id="tab-mei" aria-controls="p-mei" aria-selected="false" tabindex="-1">MEI</button>
+      <button role="tab" id="tab-simples" aria-controls="p-simples" aria-selected="false" tabindex="-1">Simples Nacional</button>
       <button role="tab" id="tab-clube" aria-controls="p-clube" aria-selected="false" tabindex="-1">Clube</button>
       <button role="tab" id="tab-pix" aria-controls="p-pix" aria-selected="false" tabindex="-1">Pix e pagamento</button>
     </div>
@@ -380,6 +381,34 @@
           <div class="linha"><span>Desse crédito, IBS</span><span id="m-cibs"></span></div>
           <div class="linha"><span>Crédito do cliente empresa com você, na guia fixa</span><span>bem menor</span></div>
           <p class="msg" id="m-msg"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIMPLES NACIONAL -->
+    <div class="painel" role="tabpanel" id="p-simples" aria-labelledby="tab-simples" hidden>
+      <div class="sim">
+        <div class="campos">
+          <p style="margin:0">Quem está no Simples Nacional pode deixar a CBS e o IBS dentro da guia (DAS) ou recolhê-los por fora, pelas regras do regime normal, mantendo o resto no Simples. Compare as duas opções.</p>
+          <div class="campo"><label for="s-fat">Faturamento médio por mês (R$)</label><input type="number" id="s-fat" value="40000" min="0" step="1000"></div>
+          <div class="campo"><label for="s-pj">Quanto desse faturamento é de vendas para empresas (%)</label><input type="number" id="s-pj" value="40" min="0" max="100" step="5"></div>
+          <div class="campo"><label for="s-comp">Compras mensais com imposto embutido (R$)</label><input type="number" id="s-comp" value="10000" min="0" step="500"><small>Material e insumos comprados de empresas do regime normal.</small></div>
+          <div class="campo"><label for="s-aliq">Alíquota efetiva da sua guia sobre o faturamento (%)</label><input type="number" id="s-aliq" value="8" min="0" max="35" step="0.5"><small>Valor de exemplo. Sua alíquota efetiva está no cálculo do Simples feito pelo contador.</small></div>
+          <div class="campo"><label for="s-parte">Quanto da guia é CBS e IBS (%)</label><input type="number" id="s-parte" value="30" min="0" max="100" step="5"><small>Valor de exemplo. A divisão exata depende do anexo do Simples e da regulamentação. Pergunte ao contador.</small></div>
+        </div>
+        <div class="resultado" aria-live="polite">
+          <div class="linha"><span>Guia do Simples hoje</span><span id="s-das"></span></div>
+          <div class="linha total"><span>Opção 1: tudo na guia (por mês)</span><span id="s-p-tot"></span></div>
+          <div class="linha"><span>Crédito do cliente empresa com você</span><span id="s-p-cred"></span></div>
+          <div class="linha total"><span>Opção 2: CBS e IBS por fora (por mês)</span><span id="s-h-tot"></span></div>
+          <div class="linha"><span>Desse total, resto da guia</span><span id="s-h-das"></span></div>
+          <div class="linha"><span>Desse total, CBS</span><span id="s-h-cbs"></span></div>
+          <div class="linha"><span>Desse total, IBS</span><span id="s-h-ibs"></span></div>
+          <div class="linha"><span>Crédito do cliente empresa com você</span><span id="s-h-cred"></span></div>
+          <div class="linha"><span>Diferença da opção 2 em relação à 1</span><span id="s-dif"></span></div>
+          <p class="msg" id="s-msg"></p>
+          <p class="msg"><strong>O que é crédito:</strong> é o desconto de imposto que a empresa que compra recebe pelo imposto que o fornecedor já pagou na venda. Quanto maior o imposto que você paga, maior o crédito do seu cliente empresa.</p>
+          <p class="msg">Na opção 1, a empresa não aproveita crédito nas compras, e o cliente só se credita do que foi pago dentro da guia. Na opção 2, os dois lados têm crédito cheio. Segundo a Fenacon, a escolha é feita em setembro e março; para 2027, a janela foi de 1 a 30 de setembro de 2026, com possibilidade de voltar atrás até 20/12/2026. Confira o prazo com seu contador.</p>
         </div>
       </div>
     </div>
@@ -489,6 +518,8 @@
       <li><a href="https://www.infomoney.com.br/business/cbs-de-113-surpreende-e-acende-alerta-para-alta-de-impostos-em-2027/">InfoMoney: CBS de 11,3% surpreende e acende alerta para alta de impostos em 2027</a></li>
       <li><a href="https://www.poder360.com.br/poder-economia/tcu-fixa-aliquota-da-cbs-em-113-para-2027/">Poder360: TCU fixa alíquota da CBS em 11,3% para 2027</a></li>
       <li><a href="https://rotadajurisprudencia.com.br/2026/08/resolucao-do-cgibs-utiliza-aliquota-de-187-para-projetar-arrecadacao-do-ibs/">Rota da Jurisprudência: resolução do CGIBS e a projeção de 18,7% para o IBS</a></li>
+      <li><a href="https://fenacon.org.br/reforma-tributaria/simples-nacional-hibrido-quando-o-credito-de-ibs-e-cbs-vira-fator-de-competitividade/">Fenacon: Simples Nacional híbrido e o crédito de IBS e CBS</a></li>
+      <li><a href="https://www.contabeis.com.br/noticias/79671/simples-nacional-e-a-reforma-tributaria-ibs-e-cbs-poderao-ser-recolhidos-dentro-ou-fora-do-das-em-2027/">Contábeis: IBS e CBS dentro ou fora do DAS em 2027</a></li>
       <li><a href="https://simtax.com.br/percentual-ibs-cbs-teto-26-5/">Simtax: teto de 26,5% do IBS e da CBS</a></li>
       <li><a href="https://simtax.com.br/imunidades-ibs-cbs-lei-complementar-214-2025/">Simtax: imunidades do IBS e da CBS</a></li>
       <li><a href="https://www.mattosfilho.com.br/unico/reforma-tributaria-organizacoes-sem-fins-lucrativos/">Mattos Filho: reforma tributária e organizações sem fins lucrativos</a></li>
@@ -617,6 +648,31 @@
     $('m-msg').textContent=msg;
   }
 
+  function simples(){
+    var r=ref(),fat=n('s-fat'),pj=n('s-pj')/100,comp=n('s-comp'),al=n('s-aliq')/100,parte=Math.min(n('s-parte'),100)/100;
+    var das=fat*al,dentroGuia=das*parte,resto=das-dentroGuia;
+    var credP=fat*pj*al*parte;
+    var reg=Math.max(0,dentro(fat,r)-dentro(comp,r)),ph=partes(reg);
+    var credH=dentro(fat*pj,r),totP=das,totH=resto+reg;
+    $('s-das').textContent=brl.format(das);
+    $('s-p-tot').textContent=brl.format(totP);
+    $('s-p-cred').textContent=brl.format(credP);
+    $('s-h-tot').textContent=brl.format(totH);
+    $('s-h-das').textContent=brl.format(resto);
+    $('s-h-cbs').textContent=brl.format(ph[0]);
+    $('s-h-ibs').textContent=brl.format(ph[1]);
+    $('s-h-cred').textContent=brl.format(credH);
+    var dif=totH-totP;
+    $('s-dif').textContent=(dif>0?'+ ':dif<0?'– ':'')+brl.format(Math.abs(dif))+' por mês';
+    $('s-dif').className=dif>0?'ruim':dif<0?'bom':'';
+    var m;
+    if(fat<=0)m='Informe o faturamento para comparar.';
+    else if(pj<.3)m='Como a maior parte das suas vendas é para pessoas, o crédito do cliente empresa pesa pouco. Em geral, a opção 1, mais simples, tende a ser suficiente.';
+    else if(dif<0)m='Com estes números, a opção 2 custa menos e ainda dá ao cliente empresa o crédito cheio ('+brl.format(credH)+' contra '+brl.format(credP)+' por mês). Vale conferir com o contador.';
+    else m='Com estes números, a opção 2 custa '+brl.format(dif)+' a mais por mês, mas dá ao seu cliente empresa um crédito maior ('+brl.format(credH)+' contra '+brl.format(credP)+'). Compare com o negócio que você pode perder e fale com um contador.';
+    $('s-msg').textContent=m;
+  }
+
   function clube(){
     var r=ref(),mens=n('k-mens'),trib=$('k-trat').value==='tributa';
     var terc=n('k-bar')+n('k-evt')+n('k-aula');
@@ -646,8 +702,8 @@
     $('x-msg').textContent='O mesmo cálculo vale para '+$('x-meio').value+'. Para você, que paga, o valor e a forma de pagamento são iguais. A diferença está na loja: o imposto é separado na hora e vai direto ao governo. Versão simplificada: na prática, os créditos das compras da loja também entram na conta.';
   }
 
-  var fns={consumidor:consumidor,mei:mei,clube:clube,pix:pix};
-  function tudo(){$('ref-total').textContent=pct.format(ref()*100)+'%';consumidor();mei();clube();pix()}
+  var fns={consumidor:consumidor,mei:mei,simples:simples,clube:clube,pix:pix};
+  function tudo(){$('ref-total').textContent=pct.format(ref()*100)+'%';consumidor();mei();simples();clube();pix()}
   document.querySelectorAll('#simuladores input,#simuladores select').forEach(function(el){
     el.addEventListener('input',tudo);
   });
