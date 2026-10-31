@@ -2,6 +2,22 @@
 
 Todas as mudanças relevantes do projeto. Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/). O site tem versão, mostrada no rodapé das duas páginas. Regra: a primeira parte muda numa reestruturação grande; a segunda, em recurso novo ou revisão de conteúdo; a terceira, em correção pontual. A 1.0.0 reúne tudo o que foi feito antes de a numeração existir.
 
+## 1.9.0 · 2026-10-31 · sexta revisão independente, com fontes primárias
+
+### Corrigido
+- e-Financeira: o site não afirma mais os limites de R$ 5 mil e R$ 15 mil como regra em vigor. A nota da Fazenda os cita, mas o ato referido (IN 2.219/2024) consta como revogado no sistema de normas da Receita (IN 2.247/2025), que repristina a IN 1.571/2015. Não achamos ato posterior que restabeleça esses valores; o texto manda conferir na Receita. A mensagem "monitoramento não é imposto" continua, com a nota como fonte.
+- Dividendos (Lei 15.270/2025, art. 6º-A): a retenção de 10% vale quando uma mesma empresa paga mais de R$ 50 mil no mês a uma mesma pessoa física, e incide sobre o total pago (antes o texto sugeria o conjunto de todas as empresas).
+- Imposto mínimo (arts. 16-A e 16-B): o texto dizia "passa a pagar"; agora diz que a taxa sobe de 0% a 10% entre R$ 600 mil e R$ 1,2 milhão e que o imposto já pago é descontado. Link para a lei no Planalto, conferida diretamente.
+- Cashback (LC 214, art. 118): a regra geral é devolver 20% da CBS e do IBS; para botijão de até 13 kg, energia elétrica, água, esgoto, gás canalizado e telecomunicações, 100% da CBS e 20% do IBS.
+- Profissional liberal (art. 127): a lista de profissões está no próprio artigo (profissões enumeradas, fiscalizadas por conselho profissional); sociedades têm requisitos próprios. Antes a nota mandava procurar nos anexos.
+- Mensalidade do clube (art. 6º, XII): deixou de ser "ponto em aberto". A lei já prevê que a contribuição só para manter a associação civil sem fins econômicos pode ficar fora; o que exige análise é cada cobrança.
+- FAQ: o prazo do Senado agora se refere à CBS de 2027 (e o IBS é projeção), como no texto principal.
+- Tabela da transição ICMS/ISS para IBS: cabeçalhos "quanto ainda vale" e "quanto já vale", e aviso de que não são taxas cobradas na compra.
+- Simples: "se a compra der direito a ele" nas três mensagens de crédito (maior, menor e igual).
+
+### Adicionado
+- Fonte no rodapé: Lei 15.270/2025 no Planalto.
+
 ## 1.8.0 · 2026-10-31 · quinta revisão independente
 
 ### Corrigido
